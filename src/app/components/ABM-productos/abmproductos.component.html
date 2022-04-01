@@ -1,0 +1,98 @@
+<h1 id="titulo-principal">REGISTRO DE PRODUCTOS</h1>
+<div id="contenido">
+    <div id="imagenes">
+        <div id="clasificador-imagenes">
+            <div id="img-principal">
+                <img src="./../../../assets/img/modelo-ropa-deportiva.jpg" alt="">
+                <table>
+                    <tr>
+                        <td>
+                            <p>Cargar imagen principal</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input class="btn-cargar-img" type="file" value="Cargar img principal" name="Cargar">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="imgs-secundarias">
+                <input class="btn-cargar-img" type="file" value="Cargar img secundaria">
+            </div>
+        </div>
+    </div>
+    <div id="datos">
+        <div id="buscador-productos">
+            <p class="descripcion-input" id="label-id">ID de producto:</p>
+            <input type="text" name="id-producto" id="id-producto">
+            <input class="btn-formato-general" type="button" value="Buscar">
+            <input class="btn-formato-general" type="button" value="Eliminar producto">
+        </div>
+        <div id="datos-principales">
+            <table id="datos-formato-tabla">
+                <tr>
+                    <td>
+                        <p class="descripcion-input">Nombre del producto:</p>
+                    </td>
+                    <td>
+                        <input type="text" name="nombre" id="nombre">
+                    </td>
+                    <td>
+                        <p class="descripcion-input">Tipo de producto:</p>
+                    </td>
+                    <td>
+                        <select name="tipo-producto" id="tipo-producto">
+                                <option value="Ropa deportiva">Ropa deportiva</option>
+                                <option value="Ropa casual">Ropa casual</option>
+                            </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="descripcion-input">Cantidad de producto:</p>
+                    </td>
+                    <td>
+                        <input type="number" name="cantidad" id="cantidad">
+                    </td>
+                    <td>
+                        <p class="descripcion-input">Talla:</p>
+                    </td>
+                    <td>
+                        <select id="talla" name="talla">
+                                <option id="S">S</option>
+                                <option id="M">M</option>
+                                <option id="X">X</option>
+                                <option id="XL">XL</option>
+                            </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="descripcion-input">Precio:</p>
+                    </td>
+                    <td>
+                        <input type="number" name="precio" id="precio">
+                    </td>
+                    <td>
+                        <p class="descripcion-input">Color:</p>
+                    </td>
+                    <td>
+                        <select id="color" name="color">
+                                <option value="azul">Azul</option>
+                                <option value="verde">Verde</option>
+                                <option value="amarillo">Amarillo</option>
+                                <option value="rojo">Rojo</option>
+                            </select>
+                    </td>
+                </tr>
+            </table>
+            <p class="descripcion-input">Descripcion del producto</p>
+            <textarea name="descripcion" rows="8" cols="110">Escriba una descripcion</textarea>
+            <div id="botones-inline">
+                <input class="btn-formato-general" type="button" value="Actualizar">
+                <input class="btn-formato-general" type="button" value="Registrar">
+            </div>
+        </div>
+    </div>
+</div>
