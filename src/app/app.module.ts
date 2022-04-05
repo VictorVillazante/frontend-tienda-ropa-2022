@@ -10,6 +10,11 @@ import { ABMproductosComponent } from './components/ABM-productos/ambproductos.c
 import { DescripcionProductosComponent} from './components/descripcion-productos/descripcionproductos.component';
 import { MenuPrincipalComponent } from './components/menu-principal/menuprincipal.component';
 import { ProductosTiendaComponent } from './components/productos-tienda/productostienda.component';
+import { HttpClientModule } from '@angular/common/http';
+
+//Servicios
+import { ServiceAdm } from './service/service-adm.service';
+import { ServiceProductoService } from './service/service-producto.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,8 +29,9 @@ import { ProductosTiendaComponent } from './components/productos-tienda/producto
     APP_ROUTING,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ServiceAdm,ServiceProductoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

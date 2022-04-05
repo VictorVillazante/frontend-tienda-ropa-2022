@@ -12,14 +12,14 @@
                 <td>Color</td>
                 <td>Descripcion</td>
             </tr>
-            <tr (click)="direccionarABMproductos()">
-                <td>Nombre del producto</td>
+            <tr *ngFor="let producto of productos" (click)="direccionarABMproductos()">
+                <td>{{producto.nombre}}</td>
                 <td>Cantidad</td>
-                <td>Precio</td>
+                <td>{{producto.precio}}</td>
                 <td>Tipo</td>
                 <td>Talla</td>
                 <td>Color</td>
-                <td>Descripcion</td>
+                <td>{{producto.descripcion}}</td>
             </tr>
         </table>
     </div>
