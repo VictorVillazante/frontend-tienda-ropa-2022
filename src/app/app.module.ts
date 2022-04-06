@@ -6,7 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { environment } from './../environments/environment';
-import { ABMproductosComponent } from './components/ABM-productos/ambproductos.component'
+import { ABMproductosComponent } from './components/ABM-productos/abmproductos.component'
 import { DescripcionProductosComponent} from './components/descripcion-productos/descripcionproductos.component';
 import { MenuPrincipalComponent } from './components/menu-principal/menuprincipal.component';
 import { ProductosTiendaComponent } from './components/productos-tienda/productostienda.component';
@@ -15,6 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
 //Servicios
 import { ServiceAdm } from './service/service-adm.service';
 import { ServiceProductoService } from './service/service-producto.service';
+import { CommonModule } from '@angular/common';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,9 @@ import { ServiceProductoService } from './service/service-producto.service';
     APP_ROUTING,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
+    NgbModule
   ],
   providers: [ServiceAdm,ServiceProductoService],
   bootstrap: [AppComponent]

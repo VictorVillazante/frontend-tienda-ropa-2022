@@ -1,5 +1,5 @@
 import { RouterModule, Routes } from '@angular/router';
-import { ABMproductosComponent } from './components/ABM-productos/ambproductos.component';
+import { ABMproductosComponent } from './components/ABM-productos/abmproductos.component';
 import { DescripcionProductosComponent} from './components/descripcion-productos/descripcionproductos.component';
 import { MenuPrincipalComponent } from './components/menu-principal/menuprincipal.component';
 import { ProductosTiendaComponent } from './components/productos-tienda/productostienda.component';

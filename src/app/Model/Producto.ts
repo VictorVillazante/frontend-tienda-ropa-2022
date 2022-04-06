@@ -1,7 +1,7 @@
 export class Producto{
-    idProducto:any;
-    nombre!: string;
-    descripcion:string | undefined;
-    precio:number | undefined;
-    idCategoria:number | undefined;
+    public idProducto:any;
+    public nombre!: string;
+    public descripcion!:string;
+    public precio!:number;
+    public idCategoria!:number;
 }

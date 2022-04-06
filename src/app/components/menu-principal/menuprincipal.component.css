@@ -75,7 +75,14 @@
 body {
     margin: 0;
     height: 100%;
+    width: 100%;
     text-align: center;
+}
+
+#cuerpo-principal {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
 }
 
 #fondo-de-pagina {
@@ -85,7 +92,7 @@ body {
 }
 
 h2#bienvenido {
-    margin-top: 4%;
+    padding-top: 4%;
 }
 
 #contenedor-titulo-principal {
@@ -122,10 +129,11 @@ h2#bienvenido {
 #contenido {
     display: flex;
     text-align: center;
-    width: 90%;
+    width: 100%;
     /*No sirve en display-inline*/
     height: 96%;
     padding: 5% 5%;
+    margin: 0px;
     /*No sirve en display:inline*/
 }
 
