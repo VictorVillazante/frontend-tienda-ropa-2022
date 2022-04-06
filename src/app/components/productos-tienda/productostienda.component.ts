@@ -14,7 +14,7 @@ export class ProductosTiendaComponent implements OnInit{
   productos:Producto[] | undefined;
 
   constructor(private service:ServiceProductoService, private router: Router) {
-      console.log("Clase ABMproductosComponent")
+      console.log("Clase ProductosTiendaComponent")
   }
   ngOnInit(): void {
     this.service.getProductos().subscribe(data=>{
@@ -22,6 +22,9 @@ export class ProductosTiendaComponent implements OnInit{
     })
   }
   direccionarABMproductos(){
+    this.router.navigate(['abmproductos']);
+  }
+  crearNuevoProducto(){
     this.router.navigate(['abmproductos']);
   }
 }

@@ -16,4 +16,7 @@ export class MenuPrincipalComponent implements OnInit{
   verProductosTienda() {
     this.router.navigate(['/productostienda']);
   }
+  verCategorias(){
+    console.log("Categorias");
+  }
 }

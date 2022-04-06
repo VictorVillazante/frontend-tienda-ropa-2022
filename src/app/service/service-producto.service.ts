@@ -11,4 +11,8 @@ export class ServiceProductoService{
         console.log("Obtener productos");
         return this.http.get<Producto[]>(this.Url);
     }
+    buscarProductoPorID(name:String){
+        console.log("Buscar productos por ID");
+        return this.http.get<Producto>('http://localhost:8080/productos/buscar?nombre='+name);
+    }
 }

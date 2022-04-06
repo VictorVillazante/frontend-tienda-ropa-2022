@@ -4,6 +4,15 @@
     <div id="img-fondo">
         <table id="opciones-menu" class="table table-striped">
             <tr id="encabezado">
+                <th>Nombre del producto</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+                <th>Tipo</th>
+                <th>Talla</th>
+                <th>Color</th>
+                <th>Descripcion</th>
+            </tr>
+            <tr (click)="direccionarABMproductos()">
                 <td>Nombre del producto</td>
                 <td>Cantidad</td>
                 <td>Precio</td>
@@ -12,15 +21,7 @@
                 <td>Color</td>
                 <td>Descripcion</td>
             </tr>
-            <tr *ngFor="let producto of productos" (click)="direccionarABMproductos()">
-                <td>{{producto.nombre}}</td>
-                <td>Cantidad</td>
-                <td>{{producto.precio}}</td>
-                <td>Tipo</td>
-                <td>Talla</td>
-                <td>Color</td>
-                <td>{{producto.descripcion}}</td>
-            </tr>
         </table>
     </div>
+    <input class="btn-formato-general" type="button" value="Registrar nuevo producto" (click)="crearNuevoProducto()">
 </div>

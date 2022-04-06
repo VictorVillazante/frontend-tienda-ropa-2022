@@ -1,9 +1,12 @@
-<h1 id="titulo-principal">REGISTRO DE PRODUCTOS</h1>
+<div id="div-titulo-principal">
+    <h1 id="titulo-principal">REGISTRO DE PRODUCTOS</h1>
+</div>
 <div id="contenido">
     <div id="imagenes">
         <div id="clasificador-imagenes">
             <div id="img-principal">
                 <img src="./../../../assets/img/modelo-ropa-deportiva.jpg" alt="">
+                <br>
                 <table>
                     <tr>
                         <td>
@@ -25,18 +28,53 @@
     <div id="datos">
         <div id="buscador-productos">
             <p class="descripcion-input" id="label-id">ID de producto:</p>
-            <input type="text" name="id-producto" id="id-producto">
-            <input class="btn-formato-general" type="button" value="Buscar">
-            <input class="btn-formato-general" type="button" value="Eliminar producto">
+            <input class="input-formato-pequenio" type="text" name="id-producto" id="id-producto">
+            <div id="btn-buscador">
+                <input class="btn-formato-general" type="button" value="Buscar" (click)="buscarProductoPorID()">
+                <input class="btn-formato-general" type="button" value="Eliminar producto">
+            </div>
         </div>
         <div id="datos-principales">
+            <div id="datos-formato-pequenio">
+                <p class="descripcion-input" name="nombre">Nombre del producto:</p>
+                <input class="input-formato-pequenio" type="text" name="nombre" id="nombre" [(ngModel)]="nombre">
+                <p class="descripcion-input">Tipo de producto:</p>
+                <select class="input-formato-pequenio" name="tipo-producto" id="tipo-producto">
+                    <option value="Ropa deportiva">Ropa deportiva</option>
+                    <option value="Ropa casual">Ropa casual</option>
+                </select>
+                <p class="descripcion-input">Cantidad de producto:</p>
+                <input class="input-formato-pequenio" type="number" name="cantidad" id="cantidad">
+                <p class="descripcion-input">Talla:</p>
+                <select class="input-formato-pequenio" id="talla" name="talla">
+                    <option id="S">S</option>
+                    <option id="M">M</option>
+                    <option id="X">X</option>
+                    <option id="XL">XL</option>
+                </select>
+                <p class="descripcion-input">Precio:</p>
+                <input class="input-formato-pequenio" type="number" name="precio" id="precio">
+                <p class="descripcion-input">Color:</p>
+                <select class="input-formato-pequenio" id="color" name="color">
+                    <option value="azul">Azul</option>
+                    <option value="verde">Verde</option>
+                    <option value="amarillo">Amarillo</option>
+                    <option value="rojo">Rojo</option>
+                </select>
+                <p class="descripcion-input">Descripcion del producto</p>
+                <textarea class="input-formato-pequenio" name="descripcion" rows="8" cols="110">Escriba una descripcion</textarea>
+                <div id="botones-inline">
+                    <input class="btn-formato-general" type="button" value="Actualizar">
+                    <input class="btn-formato-general" type="button" value="Registrar">
+                </div>
+            </div>
             <table id="datos-formato-tabla">
                 <tr>
                     <td>
                         <p class="descripcion-input">Nombre del producto:</p>
                     </td>
                     <td>
-                        <input type="text" name="nombre" id="nombre">
+                        <input type="text" name="nombre" id="nombre" [(ngModel)]="nombre">
                     </td>
                     <td>
                         <p class="descripcion-input">Tipo de producto:</p>
@@ -69,10 +107,10 @@
                 </tr>
                 <tr>
                     <td>
-                        <p class="descripcion-input">Precio:</p>
+                        <p class="descripcion-input">{{productoBuscado?.precio}}:</p>
                     </td>
                     <td>
-                        <input type="number" name="precio" id="precio">
+                        <input type="number" name="precio" id="precio" value={{productoBuscado?.precio}}>
                     </td>
                     <td>
                         <p class="descripcion-input">Color:</p>
@@ -87,11 +125,13 @@
                     </td>
                 </tr>
             </table>
-            <p class="descripcion-input">Descripcion del producto</p>
-            <textarea name="descripcion" rows="8" cols="110">Escriba una descripcion</textarea>
-            <div id="botones-inline">
-                <input class="btn-formato-general" type="button" value="Actualizar">
-                <input class="btn-formato-general" type="button" value="Registrar">
+            <div id="descripcion-seccion">
+                <p class="descripcion-input">Descripcion del producto</p>
+                <textarea id="descp-input" name="descripcion" rows="8" cols="120">Escriba una descripcion</textarea>
+                <div id="botones-inline">
+                    <input class="btn-formato-general" type="button" value="Actualizar">
+                    <input class="btn-formato-general" type="button" value="Registrar">
+                </div>
             </div>
         </div>
     </div>
