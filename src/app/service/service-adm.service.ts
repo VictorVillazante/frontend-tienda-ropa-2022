@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Categoria } from '../Model/Categoria';
-@Injectable()
+@Injectable({
+    providedIn:'root'
+})
 export class ServiceAdm{
     constructor(private http:HttpClient){}
     Url='http://localhost:8080/categorias/todos'
@@ -11,6 +13,6 @@ export class ServiceAdm{
     }
     agregarCategoria(categoria:Categoria){
         console.log("Agregar categoria");
-        return this.http.post<Categoria>('http://localhost:8080/categorias/add',{nombre:categoria.nombre});
+        return this.http.post<Categoria>('http://localhost:8080/categorias/add',categoria);
     }
 }

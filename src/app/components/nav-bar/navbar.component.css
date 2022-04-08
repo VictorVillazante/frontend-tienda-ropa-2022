@@ -1,0 +1,19 @@
+* {
+    background-color: #212529;
+    color: white !important;
+}
+
+#contenido-total {
+    background-color: #212529;
+    padding-top: 10px;
+    padding-left: 100px;
+    overflow-y: auto;
+    z-index: 1200;
+    position: fixed;
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+li {
+    margin: 0px 50px 0px 50px;
+}

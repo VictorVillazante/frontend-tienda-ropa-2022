@@ -11,7 +11,8 @@ import { DescripcionProductosComponent} from './components/descripcion-productos
 import { MenuPrincipalComponent } from './components/menu-principal/menuprincipal.component';
 import { ProductosTiendaComponent } from './components/productos-tienda/productostienda.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import { SideBarComponent } from './components/side-bar/sidebar.component';
+import { NavBarComponent } from './components/nav-bar/navbar.component';
 //Servicios
 import { ServiceAdm } from './service/service-adm.service';
 import { ServiceProductoService } from './service/service-producto.service';
@@ -23,7 +24,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ABMproductosComponent,
     DescripcionProductosComponent,
     MenuPrincipalComponent,
-    ProductosTiendaComponent
+    ProductosTiendaComponent,
+    NavBarComponent,
+    SideBarComponent
   ],
   imports: [
     BrowserModule,

@@ -13,7 +13,7 @@
                     <th>Color</th>
                     <th>Descripcion</th>
                 </tr>
-                <tr *ngFor="let producto of productos" (click)="direccionarABMproductos()">
+                <tr *ngFor="let producto of productos" (click)="direccionarABMproductos(producto.nombre)">
                     <td>{{producto.nombre}}</td>
                     <td>Cantidad</td>
                     <td>{{producto.precio}}</td>

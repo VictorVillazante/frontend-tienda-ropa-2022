@@ -21,8 +21,8 @@ export class ProductosTiendaComponent implements OnInit{
       this.productos=data;
     })
   }
-  direccionarABMproductos(){
-    this.router.navigate(['abmproductos']);
+  direccionarABMproductos(nombre:any){
+    this.router.navigate(['abmproductos',nombre]);
   }
   crearNuevoProducto(){
     this.router.navigate(['abmproductos']);

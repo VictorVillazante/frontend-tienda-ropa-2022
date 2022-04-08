@@ -24,4 +24,17 @@ export class ServiceProductoService{
             "idCategoria": producto.idCategoria
           });
     }
+    actualizarProducto(idProducto:number,producto:Producto){
+        console.log("Actualizar producto service-producto");
+        return this.http.put<Producto>('http://localhost:8080/productos/update/'+idProducto,{
+            "nombre":producto.nombre,
+            "descripcion":producto.descripcion,
+            "precio":producto.precio,
+            "idCategoria":producto.idCategoria
+        });
+    }
+    eliminarProducto(producto:Producto){
+        console.log("Eliminar producto service-producto");
+        return this.http.delete<Producto>("http://localhost:8080/productos/delete/"+producto.idProducto);
+    }
 }

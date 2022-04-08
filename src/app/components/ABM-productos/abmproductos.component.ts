@@ -9,6 +9,8 @@ import { Categoria } from 'src/app/Model/Categoria';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
+import { ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-abm-productos',
   templateUrl: './abmproductos.component.html', 
@@ -19,7 +21,7 @@ export class ABMproductosComponent implements OnInit{
   nombre!: string;
   categoriaForm!:FormGroup;
   //categorias: Categoria[] | undefined;
-  productoBuscado: Producto = {idProducto:null,nombre:"prod",precio:20,descripcion:"descripcion prod",idCategoria:1};
+  productoBuscado: Producto = {idProducto:null,nombre:"...",precio:0,descripcion:"Producto no encontrado",idCategoria:1};
   seleccionados:number[]=[];
   categorias = [
     { idCategoria: 1, nombre: "United States" },
@@ -27,17 +29,29 @@ export class ABMproductosComponent implements OnInit{
     { idCategoria: 3, nombre: "Canada" },
   ];
   categoriaSeleccionada: Categoria = {idCategoria:0,nombre:"categoria_seleccionada"};
-  constructor(private modalService: NgbModal,private fb:FormBuilder,private service_categoria:ServiceAdm,private service: ServiceProductoService,private router: Router) {
-      console.log("Clase ABMproductosComponent");
-      this.service_categoria.getCategorias().subscribe(data=>{
-        this.categorias=data;
-        console.log(this.categorias);
-      })
-      this.categoriaForm = this.fb.group({
-        categoria:[null]
-      });
-  }
-  
+  constructor(private activatedRoute:ActivatedRoute,private modalService: NgbModal,private fb:FormBuilder,private service_categoria:ServiceAdm,private service: ServiceProductoService,private router: Router) {
+    console.log("Clase ABMproductosComponent");
+    this.service_categoria.getCategorias().subscribe(data=>{
+      this.categorias=data;
+      console.log(this.categorias);
+    })
+    this.categoriaForm = this.fb.group({
+      categoria:[null]
+    });
+    this.activatedRoute.params.subscribe( params => {
+      if(params['nombre']===null || params['nombre']===undefined || typeof params['nombre'] === 'undefined'){
+        this.nombre="...";
+        this.productoBuscado = {idProducto:null,nombre:"...",precio:0,descripcion:"Producto no encontrado",idCategoria:1};
+      }else{
+        this.nombre = params['nombre'];
+      }
+      console.log("parametro");
+      console.log(params['nombre']);
+      console.log(this.nombre);
+      this.buscarProductoPorID();
+    });
+
+}
   ngOnInit(): void {
     this.service_categoria.getCategorias().subscribe(data=>{
       this.categorias=data;
@@ -45,11 +59,20 @@ export class ABMproductosComponent implements OnInit{
     this.categoriaForm = this.fb.group({
       categoria:[null]
     });
+    
+    
   }
   buscarProductoPorID(){
     console.log("El nombre ha buscar es:"+this.nombre);
     this.service.buscarProductoPorID(this.nombre).subscribe(data=>{
-      this.productoBuscado=data[0];
+      console.log(data[0]);
+      if(data[0]===null || data[0]===undefined || typeof data[0] === 'undefined'){
+        this.nombre="...";
+        this.productoBuscado = {idProducto:null,nombre:"...",precio:0,descripcion:"Producto no encontrado",idCategoria:1};
+      }else{
+        this.productoBuscado=data[0]
+        this.nombre = this.productoBuscado.nombre;
+      }
     })
   }
   closeResult = '';
@@ -61,13 +84,11 @@ export class ABMproductosComponent implements OnInit{
       console.log(this.closeResult);
       this.categoria.nombre=this.closeResult;
       this.service_categoria.agregarCategoria(this.categoria).subscribe(data=>{
-        alert("Se agrego la categoria");
+        console.log("Se agrego la categoria");
+        console.log(data);
         this.router.navigate(['abmproductos']);
-      })
-      this.service_categoria.getCategorias().subscribe(data=>{
-        this.categorias=data;
-        console.log(this.categorias);
-      })
+      });
+      
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
@@ -91,5 +112,21 @@ export class ABMproductosComponent implements OnInit{
       alert("Se agrego el producto");
       this.router.navigate(['abmproductos']);
     })    
+  }
+  actualizarProducto(){
+    console.log("Actualizar producto");
+    console.log(this.productoBuscado);
+    this.service.actualizarProducto(this.productoBuscado.idProducto,this.productoBuscado).subscribe(data=>{
+      alert("Producto actualizado");
+      console.log("mandado a service");
+      
+    })
+  }
+  eliminarProducto(){
+    console.log("Eliminar producto");
+    console.log(JSON.stringify(this.productoBuscado));
+    this.service.eliminarProducto(this.productoBuscado).subscribe(data=>{
+      alert("Producto borrado");
+    })
   }
 }

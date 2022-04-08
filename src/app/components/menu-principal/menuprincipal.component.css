@@ -91,10 +91,6 @@ body {
     height: 100%;
 }
 
-h2#bienvenido {
-    padding-top: 4%;
-}
-
 #contenedor-titulo-principal {
     width: 100%;
     display: flex;

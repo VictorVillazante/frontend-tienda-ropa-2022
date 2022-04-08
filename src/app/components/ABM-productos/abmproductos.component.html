@@ -74,7 +74,7 @@
                             <p class="descripcion-input" id="label-id">ID de producto:</p>
                         </td>
                         <td>
-                            <input class="input-formato-pequenio" type="text" name="id-producto" id="id-producto">
+                            <input [(ngModel)]="productoBuscado.idProducto" class="input-formato-pequenio" type="text" name="id-producto" id="id-producto" readonly>
                         </td>
                         <td>
                             <p class="descripcion-input">Categoria:</p>
@@ -132,8 +132,8 @@
                     <textarea id="descp-input" name="descripcion" rows="8" cols="120" [(ngModel)]="productoBuscado.descripcion">Escriba una descripcion</textarea>
                     <div id="botones-inline">
                         <input class="btn-formato-general" type="button" value="Registrar" (click)="agregarProducto()">
-                        <input class="btn-formato-general" type="button" value="Actualizar">
-                        <input class="btn-formato-general" type="button" value="Eliminar producto">
+                        <input class="btn-formato-general" type="button" value="Actualizar" (click)="actualizarProducto()">
+                        <input class="btn-formato-general" type="button" value="Eliminar producto" (click)="eliminarProducto()">
                     </div>
                 </div>
             </div>

@@ -9,6 +9,7 @@ const APP_ROUTES: Routes = [
     { path: 'menuprincipal', component: MenuPrincipalComponent },
     { path: 'productostienda', component: ProductosTiendaComponent },
     { path: 'abmproductos', component: ABMproductosComponent },
+    { path: 'abmproductos/:nombre', component: ABMproductosComponent },
     { path: '**', pathMatch: 'full', redirectTo: 'menuprincipal'}
 ];
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES, {useHash: true});
