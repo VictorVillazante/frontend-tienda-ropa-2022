@@ -15,4 +15,8 @@ export class ServiceAdm{
         console.log("Agregar categoria");
         return this.http.post<Categoria>('http://localhost:8080/categorias/add',categoria);
     }
+    getUsuarios(id:any){
+        console.log("Obtener usuario");
+        return this.http.get<Categoria[]>(this.Url);
+    }
 }

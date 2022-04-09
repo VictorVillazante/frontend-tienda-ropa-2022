@@ -1,0 +1,73 @@
+div#pagina-principal {
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+}
+
+#icono {
+    font-size: 32px;
+}
+
+#bienvenido {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    height: 50px;
+    margin-right: 40px;
+}
+
+#bienvenido h2 {
+    font-size: 24px;
+}
+
+#titulo {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+}
+
+#titulo h1 {
+    margin-left: 10px;
+    font-size: 32px;
+}
+
+#contenedor-tabla {
+    width: 90%;
+    height: 80%;
+    padding: 5%;
+}
+
+.btn {
+    width: 100px;
+    height: 50px;
+    margin: 10px 10px;
+    background-color: #085394;
+    color: #eeeeee;
+}
+
+.btn:hover {
+    color: #085394;
+    background-color: #eeeeee;
+}
+
+.btn-danger {
+    background-color: rgb(255, 72, 72);
+    color: #eeeeee;
+}
+
+.btn-danger:hover {
+    color: red;
+    background-color: #eeeeee;
+}
+
+#img-fondo {
+    background-image: url(./../../../assets/img/img_fondo_menu_principal_2.jpg);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+    text-align: start;
+    padding: 2%;
+}

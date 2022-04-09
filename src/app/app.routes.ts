@@ -3,6 +3,8 @@ import { ABMproductosComponent } from './components/ABM-productos/abmproductos.c
 import { DescripcionProductosComponent} from './components/descripcion-productos/descripcionproductos.component';
 import { MenuPrincipalComponent } from './components/menu-principal/menuprincipal.component';
 import { ProductosTiendaComponent } from './components/productos-tienda/productostienda.component';
+import { GestionUsuarioComponent } from './components/gestion-usuario/gestionusuario.component';
+import { ListadoUsuarioComponent } from './components/listado-usuario/listadousuario.component';
 const APP_ROUTES: Routes = [
     { path: 'abmproductos', component: ABMproductosComponent },
     { path: 'descripcionproductos', component: DescripcionProductosComponent },
@@ -10,6 +12,8 @@ const APP_ROUTES: Routes = [
     { path: 'productostienda', component: ProductosTiendaComponent },
     { path: 'abmproductos', component: ABMproductosComponent },
     { path: 'abmproductos/:nombre', component: ABMproductosComponent },
+    { path: 'gestionusuario/:id', component: GestionUsuarioComponent},
+    { path: 'listadousuario', component: ListadoUsuarioComponent},
     { path: '**', pathMatch: 'full', redirectTo: 'menuprincipal'}
 ];
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES, {useHash: true});

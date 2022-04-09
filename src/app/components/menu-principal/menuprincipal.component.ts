@@ -19,4 +19,7 @@ export class MenuPrincipalComponent implements OnInit{
   verCategorias(){
     console.log("Categorias");
   }
+  verUsuarioTienda(){
+    this.router.navigate(['/listadousuario']);
+  }
 }

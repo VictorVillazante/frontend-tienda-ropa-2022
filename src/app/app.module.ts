@@ -13,6 +13,8 @@ import { ProductosTiendaComponent } from './components/productos-tienda/producto
 import { HttpClientModule } from '@angular/common/http';
 import { SideBarComponent } from './components/side-bar/sidebar.component';
 import { NavBarComponent } from './components/nav-bar/navbar.component';
+import { GestionUsuarioComponent } from './components/gestion-usuario/gestionusuario.component';
+import { ListadoUsuarioComponent } from './components/listado-usuario/listadousuario.component';
 //Servicios
 import { ServiceAdm } from './service/service-adm.service';
 import { ServiceProductoService } from './service/service-producto.service';
@@ -26,7 +28,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MenuPrincipalComponent,
     ProductosTiendaComponent,
     NavBarComponent,
-    SideBarComponent
+    SideBarComponent,
+    GestionUsuarioComponent,
+    ListadoUsuarioComponent
   ],
   imports: [
     BrowserModule,
