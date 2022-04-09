@@ -25,4 +25,10 @@ export class SideBarComponent implements OnInit{
   verABMProductos(){
     this.router.navigate(['abmproductos']);
   }
+  verListaUsuarios(){
+    this.router.navigate(['listadousuario']);
+  }
+  verABMUsuarios(){
+    this.router.navigate(['gestionusuario']);
+  }
 }

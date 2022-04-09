@@ -13,6 +13,7 @@ const APP_ROUTES: Routes = [
     { path: 'abmproductos', component: ABMproductosComponent },
     { path: 'abmproductos/:nombre', component: ABMproductosComponent },
     { path: 'gestionusuario/:id', component: GestionUsuarioComponent},
+    { path: 'gestionusuario', component: GestionUsuarioComponent},
     { path: 'listadousuario', component: ListadoUsuarioComponent},
     { path: '**', pathMatch: 'full', redirectTo: 'menuprincipal'}
 ];
