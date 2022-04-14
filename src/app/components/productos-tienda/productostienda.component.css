@@ -43,7 +43,6 @@ body {
     display: inline-block;
     text-align: start;
     padding: 2%;
-    overflow: scroll;
 }
 
 #opciones-menu {

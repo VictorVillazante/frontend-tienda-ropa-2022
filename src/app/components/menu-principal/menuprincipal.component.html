@@ -4,8 +4,33 @@
         <h1 id="titulo-principal">MENU PRINICIPAL</h1>
     </div>
     <div id="contenido">
+
         <div id="img-fondo">
-            <div (click)="verProductosTienda()" id="buscador-productos" class="card">
+            <div (click)="verProductosTienda()" class="card opcion-menu" style="width: 18rem; height: 220px !important; margin-right: 2%; overflow: hidden;">
+                <div style="height: 70%; width: 100%; overflow: hidden;">
+                    <img src="../../../assets/img/productos_tienda.jpg" class="card-img-top" alt="...">
+                </div>
+                <div class="card-body" style="display: flex; justify-content: center; padding: 10px;">
+                    <p class="card-text">Productos de la tienda</p>
+                </div>
+            </div>
+            <div class="card" class="card opcion-menu" style="width: 18rem; height: 220px !important; margin-right: 2%; overflow: hidden;">
+                <div style="height: 70%; width: 100%; overflow: hidden;">
+                    <img src="../../../assets/img/categorias.jpg" class="card-img-top" alt="...">
+                </div>
+                <div class="card-body" style="display: flex; justify-content: center; padding: 10px;">
+                    <p class="card-text">Categorias de la tienda</p>
+                </div>
+            </div>
+            <div (click)="verUsuarioTienda()" class="card opcion-menu" style="width: 18rem; height: 220px !important; margin-right: 2%; overflow: hidden;">
+                <div style="height: 70%; width: 100%; overflow: hidden;">
+                    <img src="../../../assets/img/opcion_usuarios.jpg" class="card-img-top" alt="...">
+                </div>
+                <div class="card-body" style="display: flex; justify-content: center; padding: 10px;">
+                    <p class="card-text">Verificar usuarios</p>
+                </div>
+            </div>
+            <!-- <div (click)="verProductosTienda()" id="buscador-productos" class="card">
                 <img src="./../../../assets/img/polera-deportiva.jpg">
                 <p class="descripcion-input" id="label-id">Productos de la tienda</p>
             </div>
@@ -14,9 +39,11 @@
                 <p class="descripcion-input" id="label-id">Categorias de la tienda</p>
             </div>
             <div (click)="verUsuarioTienda()" id="buscador-productos" class="card">
-                <img src="./../../../assets/img/opcion_usuarios.jpg">
+                <div class="img-opcion">
+                    <img src="./../../../assets/img/opcion_usuarios.jpg">
+                </div>
                 <p class="descripcion-input" id="label-id">Verificar usuarios</p>
-            </div>
+            </div> -->
             <!-- <table id="opciones-menu">
                 <tr>
                     <td>
