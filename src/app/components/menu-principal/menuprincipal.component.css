@@ -145,9 +145,24 @@ body {
     display: flex;
 }
 
+.card-text {
+    background-color: transparent;
+}
+
+.opcion-menu {
+    width: 18rem;
+    height: 220px !important;
+    margin-right: 2%;
+    overflow: hidden;
+    transition: all 1s ease-out;
+}
+
 .opcion-menu:hover {
-    width: 240px;
+    width: 20rem;
+    height: 240px;
     background-color: #212529;
+    color: #eeeeee;
+    transition: all 1s ease-out;
 }
 
 .card-body {
