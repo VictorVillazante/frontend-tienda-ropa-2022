@@ -1,0 +1,21 @@
+<div id="contenido-principal">
+    <div id="titulo-principal">
+        <h1>CATEGORIAS</h1>
+    </div>
+    <div id="contenido">
+        <div id="form-categorias">
+            <p>ID de categori</p>
+            <div class="input-group mb-3">
+                <input type="number" [(ngModel)]="cseleccionada.idCategoria" aria-label="Username" aria-describedby="basic-addon1" class="form-control">
+            </div>
+            <p>Nombre de categoria</p>
+            <select [(ngModel)]="cseleccionada.idCategoria" class="form-select" aria-label="Default select example">
+                <option *ngFor="let c of categorias" value="{{c.idCategoria}}">
+                    {{c.nombre}}
+                </option>
+            </select>
+            <button type="button" class="btn btn-info" (click)="agregarCategoria()">Agregar Categoria</button>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,45 @@
+#contenido-principal {
+    width: 100%;
+    height: 100%;
+    background-color: #eeeeee;
+    display: block;
+    padding-top: 100px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./../../../assets/img/fondo-img-cinco.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#titulo-principal {
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+    color: #085394;
+    background-color: transparent;
+}
+
+#titulo-principal h1 {
+    background-color: transparent;
+    color: #eeeeee;
+    font-weight: bold;
+}
+
+#contenido {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
+    background-color: transparent;
+}
+
+#form-categorias {
+    display: block;
+    width: 50%;
+    height: 500px;
+    border: #085394 2px solid;
+    padding: 40px;
+}
+
+.btn {
+    width: 200px;
+}

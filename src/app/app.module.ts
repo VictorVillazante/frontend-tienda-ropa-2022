@@ -15,6 +15,7 @@ import { SideBarComponent } from './components/side-bar/sidebar.component';
 import { NavBarComponent } from './components/nav-bar/navbar.component';
 import { GestionUsuarioComponent } from './components/gestion-usuario/gestionusuario.component';
 import { ListadoUsuarioComponent } from './components/listado-usuario/listadousuario.component';
+import { CategoriaComponent } from './components/categorias/categorias.component';
 //Servicios
 import { ServiceAdm } from './service/service-adm.service';
 import { ServiceProductoService } from './service/service-producto.service';
@@ -30,7 +31,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NavBarComponent,
     SideBarComponent,
     GestionUsuarioComponent,
-    ListadoUsuarioComponent
+    ListadoUsuarioComponent,
+    CategoriaComponent
   ],
   imports: [
     BrowserModule,

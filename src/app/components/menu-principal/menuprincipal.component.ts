@@ -22,4 +22,7 @@ export class MenuPrincipalComponent implements OnInit{
   verUsuarioTienda(){
     this.router.navigate(['/listadousuario']);
   }
+  verCategoriaProducto(){
+    this.router.navigate(['/categoriaproducto']);
+  }
 }
