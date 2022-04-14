@@ -19,3 +19,26 @@ body {
 html {
     height: 100%;
 }
+
+.btn {
+    width: 100px;
+    height: 50px;
+    margin: 10px 10px;
+    background-color: #085394;
+    color: #eeeeee;
+}
+
+.btn:hover {
+    color: #085394;
+    background-color: #eeeeee;
+}
+
+.btn-danger {
+    background-color: rgb(255, 72, 72);
+    color: #eeeeee;
+}
+
+.btn-danger:hover {
+    color: red;
+    background-color: #eeeeee;
+}

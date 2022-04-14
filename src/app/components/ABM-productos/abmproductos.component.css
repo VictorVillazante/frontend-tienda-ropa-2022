@@ -1,3 +1,8 @@
+#todo-contenido {
+    width: 100%;
+    height: 100%;
+}
+
 #div-titulo-principal {
     width: 100%;
     height: 80px;
@@ -5,7 +10,7 @@
     text-align: center;
     align-content: center;
     justify-content: center;
-    margin: 20px 0px 10px 0px;
+    margin: 0px 0px 10px 0px;
     padding-top: 20px;
 }
 
@@ -78,11 +83,14 @@
 #clasificador-imagenes {
     display: flex;
     flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
     margin: 30px;
     padding: 10px;
     width: 75%;
-    height: 85%;
     border: 2px #085394 solid;
+    overflow: hidden;
 }
 
 @media(max-width:750px) {
@@ -95,8 +103,8 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    height: 75%;
     width: 100%;
+    height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -136,10 +144,11 @@ table {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     flex-basis: 10px;
-    padding: 10px 0px;
+    padding: 10px 10px;
     width: 100%;
-    height: 60px;
+    height: 80px;
     background-color: #eeeeee;
     margin-top: 30px;
     border: 2px solid #085394;
@@ -201,9 +210,9 @@ table {
 .btn-formato-general {
     background-color: #085394;
     color: white;
-    margin: 10px;
     border: 2px black solid;
     padding: 5px 10px;
+    margin: 10px;
 }
 
 #datos-principales {
@@ -238,4 +247,14 @@ table {
     #titulo-principal {
         font-size: 24px;
     }
+}
+
+#carouselExampleIndicators {
+    width: 80%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.input-formato-pequenio {
+    background-color: white;
 }
