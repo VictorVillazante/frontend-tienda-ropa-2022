@@ -6,6 +6,9 @@ import { ProductosTiendaComponent } from './components/productos-tienda/producto
 import { GestionUsuarioComponent } from './components/gestion-usuario/gestionusuario.component';
 import { ListadoUsuarioComponent } from './components/listado-usuario/listadousuario.component';
 import { CategoriaComponent } from './components/categorias/categorias.component';
+import { PrincipalUserComponent } from './components/principal-user/principal-user.component';
+import { ProductDetailsUserComponent } from './components/product-details-user/product-details-user.component';
+import { ListCarritoUserComponent } from './components/list-carrito-user/list-carrito-user.component';
 const APP_ROUTES: Routes = [
     { path: 'abmproductos', component: ABMproductosComponent },
     { path: 'descripcionproductos', component: DescripcionProductosComponent },
@@ -17,7 +20,18 @@ const APP_ROUTES: Routes = [
     { path: 'gestionusuario', component: GestionUsuarioComponent},
     { path: 'listadousuario', component: ListadoUsuarioComponent},
     { path: 'categoriaproducto', component: CategoriaComponent},
-    { path: '**', pathMatch: 'full', redirectTo: 'menuprincipal'}
+    {
+        path:'',
+        component:PrincipalUserComponent
+      },
+      {
+        path:'products/detail/:nombre',
+        component:ProductDetailsUserComponent
+      },
+      {
+        path:'carrito',
+        component:ListCarritoUserComponent
+      },
 ];
-export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES, {useHash: true});
+export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES, {useHash: false});
 

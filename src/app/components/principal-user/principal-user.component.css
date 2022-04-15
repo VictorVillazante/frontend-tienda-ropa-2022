@@ -1,0 +1,8 @@
+#slider .carousel-inner img{
+    max-height: 70vh;
+    object-fit: cover;
+}
+#slider{
+    margin-right: 1%;
+    margin-left: 1%;
+}

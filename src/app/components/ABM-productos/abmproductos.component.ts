@@ -2,10 +2,10 @@ import { Component , OnInit} from '@angular/core';
 //import { ViajesService, Viaje } from '../../services/viajes.service';
 import { Router } from '@angular/router';
 import { identifierModuleUrl } from '@angular/compiler';
-import { ServiceProductoService } from 'src/app/service/service-producto.service';
-import { ServiceAdm } from 'src/app/service/service-adm.service';
-import { Producto } from '../../Model/Producto';
-import { Categoria } from 'src/app/Model/Categoria';
+import { ServiceProductoService } from 'src/app/services/service-producto.service';
+import { ServiceAdm } from 'src/app/services/service-adm.service';
+import { Producto } from '../../models/Producto';
+import { Categoria } from 'src/app/models/Categoria';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 

@@ -1,0 +1,8 @@
+<div class="card border-light bg-light text-center" style="width: 18rem; max-height: 70rem; object-fit: cover; padding: 0.5rem;">
+    <img [src]="image" class="card-img-top" style="width: 17rem; height: 20rem;" alt="...">
+    <div class="card-body">
+      <h5 class="card-title fw-bolder">{{dataEntrante.nombre}}</h5>
+      <p class="card-text">{{dataEntrante.precio}} Bs.</p>
+      <button type="button" class="btn btn-primary" (click)="agregarCarrito()">Añadir al carrito</button>
+    </div>
+</div>

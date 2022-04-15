@@ -17,10 +17,16 @@ import { GestionUsuarioComponent } from './components/gestion-usuario/gestionusu
 import { ListadoUsuarioComponent } from './components/listado-usuario/listadousuario.component';
 import { CategoriaComponent } from './components/categorias/categorias.component';
 //Servicios
-import { ServiceAdm } from './service/service-adm.service';
-import { ServiceProductoService } from './service/service-producto.service';
+import { ServiceAdm } from './services/service-adm.service';
+import { ServiceProductoService } from './services/service-producto.service';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CardsUserComponent } from './components/cards-user/cards-user.component';
+import { FooterUserComponent } from './components/footer-user/footer-user.component';
+import { ListCarritoUserComponent } from './components/list-carrito-user/list-carrito-user.component';
+import { NavigationMenuUserComponent } from './components/navigation-menu-user/navigation-menu-user.component';
+import { PrincipalUserComponent } from './components/principal-user/principal-user.component';
+import { ProductDetailsUserComponent } from './components/product-details-user/product-details-user.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +38,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     SideBarComponent,
     GestionUsuarioComponent,
     ListadoUsuarioComponent,
-    CategoriaComponent
+    CategoriaComponent,
+    CardsUserComponent,
+    FooterUserComponent,
+    ListCarritoUserComponent,
+    NavigationMenuUserComponent,
+    PrincipalUserComponent,
+    ProductDetailsUserComponent
   ],
   imports: [
     BrowserModule,

@@ -3,7 +3,7 @@ import { Component , OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { identifierModuleUrl } from '@angular/compiler';
 import { ActivatedRoute } from '@angular/router';
-import { ServiceAdm } from 'src/app/service/service-adm.service';
+import { ServiceAdm } from 'src/app/services/service-adm.service';
 @Component({
   selector: 'app-gestion-usuario',
   templateUrl: './gestionusuario.component.html',
