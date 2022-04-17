@@ -17,18 +17,18 @@ export class SideBarComponent implements OnInit{
     
   }
   verMenuPrincipal(){
-    this.router.navigate(['menuprincipal']);
+    this.router.navigate(['/menuprincipal/menuprincipalopciones']);
   }
   verListadoDeProductos(){
-    this.router.navigate(['productostienda']);
+    this.router.navigate(['/menuprincipal/productostienda']);
   }
   verABMProductos(){
-    this.router.navigate(['abmproductos']);
+    this.router.navigate(['/menuprincipal/abmproductos']);
   }
   verListaUsuarios(){
-    this.router.navigate(['listadousuario']);
+    this.router.navigate(['/menuprincipal/listadousuario']);
   }
   verABMUsuarios(){
-    this.router.navigate(['gestionusuario']);
+    this.router.navigate(['/menuprincipal/gestionusuario']);
   }
 }

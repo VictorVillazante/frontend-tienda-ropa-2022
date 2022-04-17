@@ -5,21 +5,28 @@ import { MenuPrincipalComponent } from './components/menu-principal/menuprincipa
 import { ProductosTiendaComponent } from './components/productos-tienda/productostienda.component';
 import { GestionUsuarioComponent } from './components/gestion-usuario/gestionusuario.component';
 import { ListadoUsuarioComponent } from './components/listado-usuario/listadousuario.component';
-import { CategoriaComponent } from './components/categorias/categorias.component';
 import { PrincipalUserComponent } from './components/principal-user/principal-user.component';
 import { ProductDetailsUserComponent } from './components/product-details-user/product-details-user.component';
 import { ListCarritoUserComponent } from './components/list-carrito-user/list-carrito-user.component';
+import { CategoriaComponent } from './components/categorias/categorias.component';
+import { ComponentesMenuPrincipalComponent } from './components/componentes-menu-principal/componentes-menu-principal.component';
 const APP_ROUTES: Routes = [
-    { path: 'abmproductos', component: ABMproductosComponent },
     { path: 'descripcionproductos', component: DescripcionProductosComponent },
-    { path: 'menuprincipal', component: MenuPrincipalComponent },
-    { path: 'productostienda', component: ProductosTiendaComponent },
-    { path: 'abmproductos', component: ABMproductosComponent },
-    { path: 'abmproductos/:nombre', component: ABMproductosComponent },
-    { path: 'gestionusuario/:id', component: GestionUsuarioComponent},
-    { path: 'gestionusuario', component: GestionUsuarioComponent},
-    { path: 'listadousuario', component: ListadoUsuarioComponent},
-    { path: 'categoriaproducto', component: CategoriaComponent},
+    { path: 'menuprincipal', 
+      component: ComponentesMenuPrincipalComponent,
+      children:[
+        { path: '', component: MenuPrincipalComponent},
+        { path: 'menuprincipalopciones', component: MenuPrincipalComponent},
+        { path: 'productostienda', component: ProductosTiendaComponent },
+        { path: 'abmproductos', component: ABMproductosComponent },
+        { path: 'abmproductos/:nombre', component: ABMproductosComponent },
+        { path: 'gestionusuario/:id', component: GestionUsuarioComponent},
+        { path: 'gestionusuario', component: GestionUsuarioComponent},
+        { path: 'listadousuario', component: ListadoUsuarioComponent},
+        { path: 'categoriaproducto', component: CategoriaComponent},
+      ]
+    },
+    
     {
         path:'',
         component:PrincipalUserComponent

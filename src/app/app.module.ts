@@ -27,6 +27,7 @@ import { ListCarritoUserComponent } from './components/list-carrito-user/list-ca
 import { NavigationMenuUserComponent } from './components/navigation-menu-user/navigation-menu-user.component';
 import { PrincipalUserComponent } from './components/principal-user/principal-user.component';
 import { ProductDetailsUserComponent } from './components/product-details-user/product-details-user.component';
+import { ComponentesMenuPrincipalComponent } from './components/componentes-menu-principal/componentes-menu-principal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +45,8 @@ import { ProductDetailsUserComponent } from './components/product-details-user/p
     ListCarritoUserComponent,
     NavigationMenuUserComponent,
     PrincipalUserComponent,
-    ProductDetailsUserComponent
+    ProductDetailsUserComponent,
+    ComponentesMenuPrincipalComponent
   ],
   imports: [
     BrowserModule,
