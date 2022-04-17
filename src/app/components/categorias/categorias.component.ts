@@ -41,8 +41,15 @@ export class CategoriaComponent implements OnInit{
     })
     this.cseleccionada = {idCategoria:0,nombre:"categoria_seleccionada"};
   }
+  categoria:Categoria={idCategoria:null,nombre:""};
+  nombre_categoria_nueva:string="";
   agregarCategoria(){
-
+    this.categoria.nombre=this.nombre_categoria_nueva;
+      this.service_categoria.agregarCategoria(this.categoria).subscribe(data=>{
+        console.log("Se agrego la categoria");
+        console.log(data);
+    });
+    this.router.navigate(['menuprincipal/categoriaproducto']);
     this.cseleccionada.idCategoria=0;
   }
 }

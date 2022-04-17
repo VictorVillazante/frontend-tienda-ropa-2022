@@ -14,6 +14,6 @@ export class ListadoUsuarioComponent implements OnInit{
   ngOnInit(): void {
   }
   verMas(id:number){
-    this.router.navigate(['gestionusuario',id]);
+    this.router.navigate(['menuprincipal/gestionusuario',id]);
   }
 }
