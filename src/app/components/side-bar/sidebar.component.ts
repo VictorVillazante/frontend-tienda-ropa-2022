@@ -31,4 +31,7 @@ export class SideBarComponent implements OnInit{
   verABMUsuarios(){
     this.router.navigate(['/menuprincipal/gestionusuario']);
   }
+  salirPaginaPrincipal(){
+    this.router.navigate(['/']);
+  }
 }
