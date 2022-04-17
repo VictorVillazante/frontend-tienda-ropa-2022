@@ -6,6 +6,7 @@
             <div id="tabla-datos-productos">
                 <table id="opciones-menu" class="table table-striped">
                     <tr id="encabezado">
+                        <th>ID del producto</th>
                         <th>Nombre del producto</th>
                         <th>Cantidad</th>
                         <th>Precio</th>
@@ -15,6 +16,7 @@
                         <th>Descripcion</th>
                     </tr>
                     <tr id="contenido-tabla" *ngFor="let producto of productos" (click)="direccionarABMproductos(producto.nombre)">
+                        <td>{{producto.idProducto}}</td>
                         <td>{{producto.nombre}}</td>
                         <td>Cantidad</td>
                         <td>{{producto.precio}}</td>

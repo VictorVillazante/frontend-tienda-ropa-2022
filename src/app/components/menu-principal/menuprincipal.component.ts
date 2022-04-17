@@ -14,15 +14,15 @@ export class MenuPrincipalComponent implements OnInit{
   ngOnInit(): void {
   }
   verProductosTienda() {
-    this.router.navigate(['/productostienda']);
+    this.router.navigate(['menuprincipal/productostienda']);
   }
   verCategorias(){
     console.log("Categorias");
   }
   verUsuarioTienda(){
-    this.router.navigate(['/listadousuario']);
+    this.router.navigate(['menuprincipal/listadousuario']);
   }
   verCategoriaProducto(){
-    this.router.navigate(['/categoriaproducto']);
+    this.router.navigate(['menuprincipal/categoriaproducto']);
   }
 }

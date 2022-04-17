@@ -108,6 +108,9 @@ export class ABMproductosComponent implements OnInit{
     console.log("Agregar producto");
     this.productoBuscado.idProducto=null;
     console.log(this.productoBuscado);
+    if(this.productoBuscado.precio<1){
+      this.productoBuscado.precio=1;
+    }
     this.service.agregarProducto(this.productoBuscado).subscribe(data=>{
       alert("Se agrego el producto");
       this.router.navigate(['abmproductos']);
@@ -116,6 +119,9 @@ export class ABMproductosComponent implements OnInit{
   actualizarProducto(){
     console.log("Actualizar producto");
     console.log(this.productoBuscado);
+    if(this.productoBuscado.precio<1){
+      this.productoBuscado.precio=1;
+    }
     this.service.actualizarProducto(this.productoBuscado.idProducto,this.productoBuscado).subscribe(data=>{
       alert("Producto actualizado");
       console.log("mandado a service");
@@ -124,9 +130,15 @@ export class ABMproductosComponent implements OnInit{
   }
   eliminarProducto(){
     console.log("Eliminar producto");
+    if(this.productoBuscado.precio<1){
+      this.productoBuscado.precio=1;
+    }
     console.log(JSON.stringify(this.productoBuscado));
     this.service.eliminarProducto(this.productoBuscado).subscribe(data=>{
       alert("Producto borrado");
     })
+  }
+  volverABMProductos(){
+    this.router.navigate(["menuprincipal/abmproductos"]);
   }
 }

@@ -22,9 +22,9 @@ export class ProductosTiendaComponent implements OnInit{
     })
   }
   direccionarABMproductos(nombre:any){
-    this.router.navigate(['abmproductos',nombre]);
+    this.router.navigate(['menuprincipal/abmproductos',nombre]);
   }
   crearNuevoProducto(){
-    this.router.navigate(['abmproductos']);
+    this.router.navigate(['menuprincipal/abmproductos']);
   }
 }

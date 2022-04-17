@@ -92,7 +92,7 @@
                         </td>
                         <td>
                             <div class="input-group mb-3">
-                                <input [(ngModel)]="productoBuscado.idProducto" aria-label="Username" aria-describedby="basic-addon1" placeholder="ID:" class="form-control input-formato-pequenio" type="text" name="id-producto" id="id-producto">
+                                <input [(ngModel)]="productoBuscado.idProducto" aria-label="Username" aria-describedby="basic-addon1" placeholder="ID:" class="form-control input-formato-pequenio" type="text" name="id-producto" id="id-producto" disabled="">
                             </div>
                         </td>
                         <td>
@@ -113,7 +113,7 @@
                         </td>
                         <td>
                             <div class="input-group mb-3">
-                                <input aria-label="" aria-describedby="basic-addon1" placeholder="..." class="form-control input-formato-pequenio" type="number" name="cantidad" id="cantidad">
+                                <input min="1" pattern="^[0-9]+" aria-label="" aria-describedby="basic-addon1" placeholder="..." class="form-control input-formato-pequenio" type="number" name="cantidad" id="cantidad">
                             </div>
                         </td>
                         <td>
@@ -134,7 +134,7 @@
                         </td>
                         <td>
                             <div class="input-group mb-3">
-                                <input [(ngModel)]="productoBuscado.precio" aria-label="" aria-describedby="basic-addon1" placeholder="..." class="form-control input-formato-pequenio" type="number" name="precio" id="precio">
+                                <input min="1" pattern="^[0-9]+" [(ngModel)]="productoBuscado.precio" aria-label="" aria-describedby="basic-addon1" placeholder="..." class="form-control input-formato-pequenio" type="number" name="precio" id="precio">
                             </div>
                         </td>
                         <td>
@@ -178,7 +178,8 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-outline-dark" (click)="modal.close(nueva_categoria)">Save</button>
+            <button type="button" class="btn btn-outline-dark" (click)="modal.close(nueva_categoria)" style="width: 200px;">Registrar nueva categoria</button>
+            <button type="button" class="btn btn-danger" (click)="modal.dismiss('')">Salir</button>
         </div>
     </ng-template>
 </div>
