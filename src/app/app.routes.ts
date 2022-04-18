@@ -1,3 +1,4 @@
+import { CreateAccountUserComponent } from './components/create-account-user/create-account-user.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ABMproductosComponent } from './components/ABM-productos/abmproductos.component';
 import { DescripcionProductosComponent} from './components/descripcion-productos/descripcionproductos.component';
@@ -38,6 +39,10 @@ const APP_ROUTES: Routes = [
       {
         path:'carrito',
         component:ListCarritoUserComponent
+      },
+      {
+        path:'account/register',
+        component:CreateAccountUserComponent
       },
 ];
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES, {useHash: false});

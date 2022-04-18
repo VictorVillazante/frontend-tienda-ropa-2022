@@ -1,3 +1,4 @@
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CarritoService } from './../../services/carrito.service';
 import { Product } from './../../models/Product';
 import { Component, OnInit } from '@angular/core';
@@ -12,20 +13,28 @@ export class ListCarritoUserComponent implements OnInit {
   listaProductos: Product[] | undefined
   total:number | undefined;
 
+  public productoForm!: FormGroup;
+
   public image:string | undefined;
   public high=Math.round(this.getRandomArbitrary(150,149));
   public width=Math.round(this.getRandomArbitrary(150,149))
 
-  constructor(private Carrito:CarritoService) { }
+  constructor(private Carrito:CarritoService, private formBuilde: FormBuilder) { }
 
   ngOnInit(): void {
     this.image="https://picsum.photos/"+this.width+"/"+this.high+""
-    //this.listaProductos=this.Carrito.getCache('carrito');
+
     this.Carrito.getObs('carrito').subscribe(carrito=>{
       this.listaProductos = carrito
       this.total=this.costoTotal(this.listaProductos);
     })
+
+    this.productoForm = this.formBuilde.group({
+      cantidad: ['']
+    });
   }
+
+
 
   public getRandomArbitrary(min: number, max: number) {
     return Math.random() * (max - min) + min;
@@ -40,6 +49,9 @@ export class ListCarritoUserComponent implements OnInit {
       total = total + productos[i].cantidad*productos[i].precio
     }
     return total;
+  }
+  mostrarCantidad(){
+    console.log("prueba")
   }
 
 }

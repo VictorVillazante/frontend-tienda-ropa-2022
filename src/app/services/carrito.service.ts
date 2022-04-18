@@ -101,4 +101,12 @@ export class CarritoService {
       return this.productos$.asObservable()
     }
   }
+  modificar(key: string, producto: Product){
+    for(let i=0;i<this.productos.length; i++){
+      if(producto == this.productos[i]){
+        this.productos[i].cantidad = producto.cantidad
+        localStorage.setItem(key,JSON.stringify(this.productos))
+      }
+    }
+  }
 }

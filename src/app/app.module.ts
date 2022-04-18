@@ -28,6 +28,8 @@ import { NavigationMenuUserComponent } from './components/navigation-menu-user/n
 import { PrincipalUserComponent } from './components/principal-user/principal-user.component';
 import { ProductDetailsUserComponent } from './components/product-details-user/product-details-user.component';
 import { ComponentesMenuPrincipalComponent } from './components/componentes-menu-principal/componentes-menu-principal.component';
+import { AccountUserComponent } from './components/account-user/account-user.component';
+import { CreateAccountUserComponent } from './components/create-account-user/create-account-user.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +48,9 @@ import { ComponentesMenuPrincipalComponent } from './components/componentes-menu
     NavigationMenuUserComponent,
     PrincipalUserComponent,
     ProductDetailsUserComponent,
-    ComponentesMenuPrincipalComponent
+    ComponentesMenuPrincipalComponent,
+    AccountUserComponent,
+    CreateAccountUserComponent
   ],
   imports: [
     BrowserModule,
