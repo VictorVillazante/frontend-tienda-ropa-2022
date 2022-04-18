@@ -29,10 +29,10 @@
                                         <button type="button" class="btn btn-danger" (click)="deleteData(producto)">Eliminar</button>
                                     </div>
                                     <div class="col-6">
-                                        <form [formGroup]="productoForm" (submit)="mostrarCantidad()" class="d-flex">
-                                            <input type="number" class="form-control" formControlName="cantidad">
+                                        
+                                            <input type="number" class="form-control" value="{{producto.cantidad}}">
                                             <button type="button" class="btn btn-light">Confirmar</button>                                            
-                                        </form>                                       
+                                                                             
                                     </div>
                                 </div>
                             </div>        

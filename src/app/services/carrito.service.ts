@@ -41,18 +41,36 @@ export class CarritoService {
   }
 
   setCache(key: string, data:Product){
-    this.productos.push(data)
-    this.productos$.next(this.productos)
+
 
     let productos: Product[]=[];
+    let aux = true
     if(localStorage.getItem(key)===null){
-      productos.push(data)
+      
       localStorage.setItem(key,'['+JSON.stringify(data)+']')
+      this.productos.push(data)
+      this.productos$.next(this.productos)
+      console.log("iniciando cache: producto nuevos")
     }
     else{
-      productos = JSON.parse(''+localStorage.getItem(key));      
-      productos.push(data)
-      localStorage.setItem(key,JSON.stringify(productos))
+      for(let i=0;i<this.productos.length; i++){
+        if(data.nombre == this.productos[i].nombre){
+            console.log("producto repetido")
+            this.productos[i].cantidad++;
+            this.productos$.next(this.productos)    
+            localStorage.setItem(key,JSON.stringify(this.productos))                   
+            aux = false
+        }
+      }
+      if(aux){
+        console.log("producto nuevo")
+        productos = JSON.parse(''+localStorage.getItem(key));      
+        productos.push(data)
+        localStorage.setItem(key,JSON.stringify(productos))
+        this.productos.push(data)
+        this.productos$.next(this.productos)
+      }
+
     }
   }
     
