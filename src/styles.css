@@ -1,44 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
-* {
-    padding: 0;
-    margin: 0;
-    background-color: #eeeeee;
-    font-family: 'Lobster', cursive;
-    font-family: 'Handlee', cursive;
-    font-weight: 700;
-}
-
 body {
-    padding: 0;
-    margin: 0;
     height: 100%;
     width: 100%;
 }
 
 html {
     height: 100%;
-}
-
-.btn {
-    width: 100px;
-    height: 50px;
-    margin: 10px 10px;
-    background-color: #085394;
-    color: #eeeeee;
-}
-
-.btn:hover {
-    color: #085394;
-    background-color: #eeeeee;
-}
-
-.btn-danger {
-    background-color: rgb(255, 72, 72);
-    color: #eeeeee;
-}
-
-.btn-danger:hover {
-    color: red;
-    background-color: #eeeeee;
 }
