@@ -1,36 +1,54 @@
 <app-navigation-menu-user></app-navigation-menu-user>
 <div class="container">
-    <div class="row">
-        <h1 style="text-align: center;">Crear Cuenta</h1>
-    </div>
-    <br>
-    <div class="row">
-        <div class="col-4"></div>
-        <div class="col-4">
-            <form>
-                <div class="form-group">
-                  <label for="exampleFormControlInput1">Fist Name</label>
-                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+
+    <div class="login-wrap">
+        <div class="login-html">
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Ingresar</label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Registrarse</label>
+            <div class="login-form">
+                <div class="sign-in-htm">
+                    <form action="/ingresar" method="POST">
+                        <div class="group">
+                            <label for="user" class="label">Correo</label>
+                            <input id="user" name="cl" type="text" class="input">
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Password</label>
+                            <input id="pass" type="password" name="passwordLogin" class="input" data-type="password">
+                        </div>
+                        <div class="group">
+                            <input type="submit" class="button" value="Ingresar">
+                        </div>
+                        <div class="hr"></div>
+                    </form>
                 </div>
-                <br>
-                <div class="form-group">
-                    <label for="exampleFormControlInput1">Last Name</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                  </div>
-                  <br>
-                  <div class="form-group">
-                    <label for="exampleFormControlInput1">Email address</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                  </div>
-                  <br>
-                  <div class="form-group">
-                    <label for="exampleFormControlInput1">Password</label>
-                    <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                  </div>
-                  <button type="submit" class="btn btn-primary mb-2" style="">registrarse</button>
-              </form>                  
+                <div class="sign-up-htm">
+                    <form action="/registrar" method="POST">
+                        <div class="group">
+                            <label for="user" class="label">Nombre</label>
+                            <input id="user" type="text" class="input" name="nombre">
+                        </div>
+                        <div class="group">
+                            <label for="user" class="label">Apellido</label>
+                            <input id="user" type="text" class="input" name="apellido">
+                        </div>
+                        <div class="group">
+                            <label for="user" class="label">Correo</label>
+                            <input id="user" type="text" class="input" name="correo">
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Password</label>
+                            <input id="pass" type="password" class="input" data-type="passsword" name="password">
+                        </div>
+                        <div class="group">
+                            <input type="submit" class="button" value="Registrar">
+                        </div>
+                        <div class="hr"></div>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="col-4"></div>
     </div>
+
 </div>
 <app-footer-user></app-footer-user>
