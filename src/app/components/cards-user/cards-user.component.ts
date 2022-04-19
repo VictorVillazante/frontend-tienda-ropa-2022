@@ -41,6 +41,7 @@ export class CardsUserComponent implements OnInit {
   /*public mostrarCarrito(){
     return (this.Carrito.getCarrito('1'))
   }*/
+  
 
 
 }

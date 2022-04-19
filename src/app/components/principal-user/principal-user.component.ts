@@ -1,3 +1,4 @@
+import { Categoria } from 'src/app/models/Categoria';
 import { RestService } from './../../services/rest.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -10,12 +11,18 @@ export class PrincipalUserComponent implements OnInit {
 
   title = 'backend-tienda-ropa';
 
+  subtitulo= ""
+
   public listaProductos:any = []
+  
+  public listCategorias:any = []
 
   constructor(private RestService:RestService) { }
 
   ngOnInit(): void {
     this.cargarData();
+    this.cargarCategorias();
+    this.subtitulo="Diseños originales XD"
   }
 
   public cargarData(){
@@ -23,6 +30,21 @@ export class PrincipalUserComponent implements OnInit {
     .subscribe(respuesta=>{
       this.listaProductos = respuesta
     })
+  }
+
+  public cargarCategorias(){
+    this.RestService.get('http://localhost:8080/categorias/todos')
+    .subscribe(respuesta=>{
+      this.listCategorias = respuesta
+    })
+  }
+
+  public productosCategoria(categoria:Categoria){
+    this.RestService.get('http://localhost:8080/productos/categoria?id_categoria='+categoria.idCategoria)
+    .subscribe(respuesta=>{
+      this.listaProductos = respuesta
+    })
+    this.subtitulo = "CATEGORIA: "+categoria.nombre
   }
 
 }

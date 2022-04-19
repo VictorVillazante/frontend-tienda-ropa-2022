@@ -33,7 +33,7 @@ const APP_ROUTES: Routes = [
         component:PrincipalUserComponent
       },
       {
-        path:'products/detail/:nombre',
+        path:'products/details/:nombre',
         component:ProductDetailsUserComponent
       },
       {
