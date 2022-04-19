@@ -121,9 +121,10 @@ export class CarritoService {
   modificar(key: string, data: Product){
     for(let i=0;i<this.productos.length; i++){
       if(data.nombre == this.productos[i].nombre){
-          this.productos[i].cantidad++;
+          this.productos[i].cantidad= data.cantidad;
           this.productos$.next(this.productos)    
-          localStorage.setItem(key,JSON.stringify(this.productos))                         }
+          localStorage.setItem(key,JSON.stringify(this.productos))
+      }
     }
   }
 }

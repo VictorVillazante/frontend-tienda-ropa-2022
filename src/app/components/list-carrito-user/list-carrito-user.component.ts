@@ -57,7 +57,7 @@ export class ListCarritoUserComponent implements OnInit {
     }
     return total;
   }
-  mostrarCantidad(id:number){
+  modoificarCantidad(id:number){
     for(let producto of this.listaProductos){
       if(producto.id == id){
         console.log(producto);
