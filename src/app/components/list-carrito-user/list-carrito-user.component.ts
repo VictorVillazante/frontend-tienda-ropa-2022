@@ -1,4 +1,4 @@
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { CarritoService } from './../../services/carrito.service';
 import { Product } from './../../models/Product';
 import { Component, OnInit } from '@angular/core';
@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListCarritoUserComponent implements OnInit {
 
-  listaProductos: Product[] | undefined
+  listaProductos: Product[] = [];
   total:number | undefined;
 
   public productoForm!: FormGroup;
@@ -27,13 +27,20 @@ export class ListCarritoUserComponent implements OnInit {
     this.Carrito.getObs('carrito').subscribe(carrito=>{
       this.listaProductos = carrito
       this.total=this.costoTotal(this.listaProductos);
+      this.cargarControll()
     })
-
-    this.productoForm = this.formBuilde.group({
-      cantidad: ['']
+    this.productoForm = new FormGroup({
+      
     });
+    
   }
 
+  cargarControll(){
+    for(let producto of this.listaProductos){
+      console.log(producto.id)
+      this.productoForm.addControl(producto.id.toString(),new FormControl())
+    }
+  }
 
 
   public getRandomArbitrary(min: number, max: number) {
@@ -50,8 +57,13 @@ export class ListCarritoUserComponent implements OnInit {
     }
     return total;
   }
-  mostrarCantidad(){
-    console.log("prueba")
+  mostrarCantidad(id:number){
+    for(let producto of this.listaProductos){
+      if(producto.id == id){
+        console.log(producto);
+        this.Carrito.modificar('carrito',producto)
+      }
+    }    
   }
 
 }

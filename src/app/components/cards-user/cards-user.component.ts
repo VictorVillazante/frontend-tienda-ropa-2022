@@ -25,8 +25,9 @@ export class CardsUserComponent implements OnInit {
   }
 
   public agregarCarrito(){
+    console.log(this.dataEntrante)
     this.Carrito.setCache('carrito',{
-      id: this.dataEntrante.id_producto,
+      id: this.dataEntrante.idProducto,
       nombre: this.dataEntrante.nombre,
       precio: this.dataEntrante.precio,
       cantidad: 1

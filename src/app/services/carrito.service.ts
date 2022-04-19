@@ -41,8 +41,7 @@ export class CarritoService {
   }
 
   setCache(key: string, data:Product){
-
-
+    
     let productos: Product[]=[];
     let aux = true
     if(localStorage.getItem(key)===null){
@@ -119,12 +118,12 @@ export class CarritoService {
       return this.productos$.asObservable()
     }
   }
-  modificar(key: string, producto: Product){
+  modificar(key: string, data: Product){
     for(let i=0;i<this.productos.length; i++){
-      if(producto == this.productos[i]){
-        this.productos[i].cantidad = producto.cantidad
-        localStorage.setItem(key,JSON.stringify(this.productos))
-      }
+      if(data.nombre == this.productos[i].nombre){
+          this.productos[i].cantidad++;
+          this.productos$.next(this.productos)    
+          localStorage.setItem(key,JSON.stringify(this.productos))                         }
     }
   }
 }
