@@ -15,6 +15,10 @@ export class ServiceProductoService{
         console.log("Buscar productos por ID");
         return this.http.get<Producto[]>('http://localhost:8080/productos/buscar?nombre='+name);
     }
+    buscarVariosProductosPorNombre(name:String){
+        console.log("Buscar varios productos por nombre");
+        return this.http.get<Producto[]>(' http://localhost:8080/productos/coincidencias?coincidencias='+name);
+    }
     agregarProducto(producto:Producto){
         console.log("Agregar producto");
         return this.http.post<Producto>('http://localhost:8080/productos/add',{

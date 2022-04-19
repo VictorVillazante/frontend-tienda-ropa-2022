@@ -10,13 +10,15 @@ import { Producto } from 'src/app/models/Producto';
   styleUrls: ['./productostienda.component.css']
 })
 export class ProductosTiendaComponent implements OnInit{
-
+  nombre:string="";
   productos:Producto[] | undefined;
 
   constructor(private service:ServiceProductoService, private router: Router) {
-      console.log("Clase ProductosTiendaComponent")
+      console.log("Clase ProductosTiendaComponent");
+      this.nombre="";
   }
   ngOnInit(): void {
+    this.nombre="";
     this.service.getProductos().subscribe(data=>{
       this.productos=data;
     })
@@ -26,5 +28,23 @@ export class ProductosTiendaComponent implements OnInit{
   }
   crearNuevoProducto(){
     this.router.navigate(['menuprincipal/abmproductos']);
+  }
+  obtenerProductosSimilares(){
+    this.service.buscarVariosProductosPorNombre(this.nombre).subscribe(data=>{
+      this.productos=data;
+      if(this.productos?.length==0){
+        window.alert("No se encontraron coincidencias");
+      }
+    })
+    
+  }
+  obtenerTodosProductos(){
+    this.service.getProductos().subscribe(data=>{
+      this.productos=data;
+      if(this.productos?.length==0){
+        window.alert("Error al cargar productos");
+      }
+    })
+    
   }
 }

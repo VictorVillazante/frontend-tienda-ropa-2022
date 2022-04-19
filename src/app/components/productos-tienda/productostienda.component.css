@@ -44,10 +44,21 @@ html {
     background-color: #eeeeee;
 }
 
-div#total-contenido {
+div#contenido-total {
     background-color: #eeeeee;
-    height: 100%;
     width: 100%;
+    padding-top: 100px;
+}
+
+div#buscador {
+    width: 90%;
+    padding: 0% 10%;
+    margin-top: 20px;
+    display: flex;
+}
+
+div#buscador button {
+    margin: 0px 10px;
 }
 
 #titulo-principal {

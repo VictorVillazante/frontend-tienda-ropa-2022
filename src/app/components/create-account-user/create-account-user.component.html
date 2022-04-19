@@ -26,22 +26,22 @@
                     <form action="/registrar" method="POST">
                         <div class="group">
                             <label for="user" class="label">Nombre</label>
-                            <input id="user" type="text" class="input" name="nombre">
+                            <input id="user" [(ngModel)]="usuarioNuevo.nombre" type="text" class="input" name="nombre">
                         </div>
                         <div class="group">
                             <label for="user" class="label">Apellido</label>
-                            <input id="user" type="text" class="input" name="apellido">
+                            <input id="user" [(ngModel)]="usuarioNuevo.apellido" type="text" class="input" name="apellido">
                         </div>
                         <div class="group">
                             <label for="user" class="label">Correo</label>
-                            <input id="user" type="text" class="input" name="correo">
+                            <input id="user" [(ngModel)]="usuarioNuevo.email" type="email" class="input" name="correo">
                         </div>
                         <div class="group">
                             <label for="pass" class="label">Password</label>
-                            <input id="pass" type="password" class="input" data-type="passsword" name="password">
+                            <input id="pass" [(ngModel)]="usuarioNuevo.password" type="password" class="input" data-type="passsword" name="password">
                         </div>
                         <div class="group">
-                            <input type="submit" class="button" value="Registrar">
+                            <input type="submit" class="button" value="Registrar" (click)="registrarNuevoUsuario()">
                         </div>
                         <div class="hr"></div>
                     </form>

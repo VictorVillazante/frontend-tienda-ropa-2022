@@ -1,6 +1,13 @@
-<div>
+<div id="contenido-total">
     <h2 id="bienvenido">Bienvenido ...</h2>
     <h1 id="titulo-principal">PRODUCTOS DE LA TIENDA</h1>
+    <div id="buscador">
+        <div style="height: 50px" class="input-group mb-3">
+            <input style="width: 200px; height: 100%; padding: 5px 0px 0px 5px;" aria-label="Username" aria-describedby="basic-addon1" class="form-control" type="text" name="nombre" id="nombre" [(ngModel)]="nombre">
+        </div>
+        <button type="button" class="btn btn-primary" (click)="obtenerProductosSimilares()" style="width: 300px; ">Buscar productos</button>
+        <button type="button" class="btn btn-primary" (click)="obtenerTodosProductos()" style="width: 300px; ">Mostrar todo</button>
+    </div>
     <div id="contenido">
         <div id="img-fondo">
             <div id="tabla-datos-productos">
