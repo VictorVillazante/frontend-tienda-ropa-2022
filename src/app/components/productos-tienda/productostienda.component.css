@@ -8,6 +8,48 @@ body {
     text-align: start;
 }
 
+* {
+    padding: 0;
+    margin: 0;
+    background-color: #eeeeee;
+    font-family: 'Lobster', cursive;
+    font-family: 'Handlee', cursive;
+    font-weight: 700;
+}
+
+html {
+    height: 100%;
+}
+
+.btn {
+    width: 100px;
+    height: 50px;
+    margin: 10px 10px;
+    background-color: #085394;
+    color: #eeeeee;
+}
+
+.btn:hover {
+    color: #085394;
+    background-color: #eeeeee;
+}
+
+.btn-danger {
+    background-color: rgb(255, 72, 72);
+    color: #eeeeee;
+}
+
+.btn-danger:hover {
+    color: red;
+    background-color: #eeeeee;
+}
+
+div#total-contenido {
+    background-color: #eeeeee;
+    height: 100%;
+    width: 100%;
+}
+
 #titulo-principal {
     color: #085394;
     /*Este margin hacia que la pantalla este mas ancha de lo normal margin: 1% 0px 0px 100px;*/
