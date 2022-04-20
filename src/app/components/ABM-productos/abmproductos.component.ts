@@ -106,15 +106,17 @@ export class ABMproductosComponent implements OnInit{
   }
   agregarProducto(){
     console.log("Agregar producto");
-    this.productoBuscado.idProducto=null;
-    console.log(this.productoBuscado);
-    if(this.productoBuscado.precio<1){
-      this.productoBuscado.precio=1;
-    }
-    this.service.agregarProducto(this.productoBuscado).subscribe(data=>{
-      alert("Se agrego el producto");
-      this.router.navigate(['abmproductos']);
-    })    
+    if(this.productoBuscado.nombre!="" && this.productoBuscado.precio>=0){
+      this.productoBuscado.idProducto=null;
+      console.log(this.productoBuscado);
+      if(this.productoBuscado.precio<1){
+        this.productoBuscado.precio=1;
+      }
+      this.service.agregarProducto(this.productoBuscado).subscribe(data=>{
+        alert("Se agrego el producto");
+        this.router.navigate(['abmproductos']);
+      })  
+    }  
   }
   actualizarProducto(){
     console.log("Actualizar producto");
