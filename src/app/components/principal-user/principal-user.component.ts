@@ -17,18 +17,20 @@ export class PrincipalUserComponent implements OnInit {
   
   public listCategorias:any = []
 
+  public page=0
+
   constructor(private RestService:RestService) { }
 
   ngOnInit(): void {
-    this.cargarData();
+    this.cargarData(this.page,8);
     this.cargarCategorias();
     this.subtitulo="Diseños originales XD"
   }
 
-  public cargarData(){
-    this.RestService.get('http://localhost:8080/productos/todos')
-    .subscribe(respuesta=>{
-      this.listaProductos = respuesta
+  public cargarData(page:number, size:number){
+    this.RestService.get('http://localhost:8080/productos/todos?page='+page+'&size='+size)
+    .subscribe((respuesta:any)=>{
+      this.listaProductos = respuesta.content
     })
   }
 
@@ -45,6 +47,17 @@ export class PrincipalUserComponent implements OnInit {
       this.listaProductos = respuesta
     })
     this.subtitulo = "CATEGORIA: "+categoria.nombre
+  }
+  public mas (){
+    this.page++
+    this.cargarData(this.page,8)
+  }
+  public menos (){
+    if(this.page>0){
+      this.page--
+      this.cargarData(this.page,8)
+    }
+
   }
 
 }
