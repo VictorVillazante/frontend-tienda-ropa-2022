@@ -48,6 +48,37 @@ export class CategoriaComponent implements OnInit{
       this.service_categoria.agregarCategoria(this.categoria).subscribe(data=>{
         console.log("Se agrego la categoria");
         console.log(data);
+        this.service_categoria.getCategorias().subscribe(data=>{
+          this.categorias=data;
+          console.log(this.categorias);
+        });
+    });
+    this.router.navigate(['menuprincipal/categoriaproducto']);
+    this.cseleccionada.idCategoria=0;
+  }
+  modificarCategoria(){
+    this.categoria.idCategoria=this.cseleccionada.idCategoria;
+    this.categoria.nombre=this.nombre_categoria_nueva;
+      this.service_categoria.modificarCategoria(this.categoria).subscribe(data=>{
+        console.log("Se modifico la categoria");
+        console.log(data);
+        this.service_categoria.getCategorias().subscribe(data=>{
+          this.categorias=data;
+          console.log(this.categorias);
+        });
+    });
+    this.router.navigate(['menuprincipal/categoriaproducto']);
+    this.cseleccionada.idCategoria=0;
+  }
+  eliminarCategoria(){
+    this.categoria.idCategoria=this.cseleccionada.idCategoria;
+    this.categoria.nombre=this.nombre_categoria_nueva;
+      this.service_categoria.eliminarCategoria(this.categoria).subscribe(data=>{
+        console.log("Se elimino la categoria");
+        this.service_categoria.getCategorias().subscribe(data=>{
+          this.categorias=data;
+          console.log(this.categorias);
+        });
     });
     this.router.navigate(['menuprincipal/categoriaproducto']);
     this.cseleccionada.idCategoria=0;

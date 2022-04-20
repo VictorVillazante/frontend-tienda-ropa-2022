@@ -13,7 +13,17 @@ export class ServiceAdm{
     }
     agregarCategoria(categoria:Categoria){
         console.log("Agregar categoria");
-        return this.http.post<Categoria>('http://localhost:8080/categorias/add',categoria);
+        return this.http.post('http://localhost:8080/categorias/add',categoria,{ responseType: 'text' });
+    }
+    modificarCategoria(categoria:Categoria){
+        console.log("Modificar categoria");
+        return this.http.put<Categoria>('http://localhost:8080/categorias/editar/'+categoria.idCategoria,{
+            "nombre":categoria.nombre
+        });
+    }
+    eliminarCategoria(categoria:Categoria){
+        console.log("Eliminar categoria");
+        return this.http.delete("http://localhost:8080/categorias/delete/"+categoria.idCategoria,{ responseType: 'text' });
     }
     getUsuarios(id:any){
         console.log("Obtener usuario");
