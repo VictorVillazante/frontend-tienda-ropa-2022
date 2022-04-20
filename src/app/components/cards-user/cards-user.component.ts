@@ -25,15 +25,18 @@ export class CardsUserComponent implements OnInit {
   }
 
   public agregarCarrito(){
-    console.log(this.dataEntrante)
-    this.Carrito.setCache('carrito',{
-      id: this.dataEntrante.idProducto,
-      nombre: this.dataEntrante.nombre,
-      precio: this.dataEntrante.precio,
-      cantidad: 1
-      /*color: 'string',
-      talla: 'string',*/
-    });
+    if(confirm("Agregar este producto al carrito")){
+      console.log(this.dataEntrante)
+      this.Carrito.setCache('carrito',{
+        id: this.dataEntrante.idProducto,
+        nombre: this.dataEntrante.nombre,
+        precio: this.dataEntrante.precio,
+        cantidad: 1
+        /*color: 'string',
+        talla: 'string',*/
+      });
+    }
+
     //console.log(this.Carrito.getCarrito());
     //console.log("Agregando datos al array")
 

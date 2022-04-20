@@ -48,7 +48,9 @@ export class ListCarritoUserComponent implements OnInit {
   }
 
   deleteData(producto:Product){
-    this.Carrito.deleteData('carrito',producto)
+    if(confirm("Borrar producto del carrito")){
+      this.Carrito.deleteData('carrito',producto)
+    }
   }
   costoTotal(productos:Product[]){
     let total = 0
