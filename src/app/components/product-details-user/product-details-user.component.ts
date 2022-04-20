@@ -9,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductDetailsUserComponent implements OnInit {
 
-  public detalles: any;
+  public detalles: any=[];
+  public colores: any= [];
+  public tallas: any= [];
+
+  public nombre: any
+
+
   public image:string | undefined;
 
   public high=Math.round(this.getRandomArbitrary(500,499));
@@ -18,24 +24,73 @@ export class ProductDetailsUserComponent implements OnInit {
   constructor(private route:ActivatedRoute, private RestService:RestService) { }
 
   ngOnInit(): void {
-    this.image="https://picsum.photos/"+this.width+"/"+this.high+""
+    this.image="https://picsum.photos/"+this.width+"/"+this.high+""    
 
     this.route.paramMap.subscribe((paramMap:any) =>{
       const {params} = paramMap
-      console.log(params.variable)
-      this.cargarData(params)
+      this.nombre = params.nombre            
     })
+    console.log(this.nombre)
+    console.log(this.detalles)
+    this.cargarData(this.nombre)
+    /*this.cargarColores()
+    this.cargarTallas()
+    console.log(this.detalles)*/
+
   }
 
   public getRandomArbitrary(min: number, max: number) {
     return Math.random() * (max - min) + min;
   }
 
-  public cargarData(param_name:string){
-    this.RestService.get('http://localhost:8080/productos/buscarc?nompro=${param_name}')
+  public cargarData(param:string){
+    this.RestService.get('http://localhost:8080/productos/buscarc?nompro='+param)
     .subscribe(respuesta=>{
-      this.detalles = respuesta
+      
+      this.detalles=respuesta
+      this.cargarColores()
+      this.cargarTallas()
+
     })
+  }
+
+  public cargarColores(){
+    let bool = true
+    let nuevo = ""
+    for(let producto of this.detalles){
+      nuevo = producto.color
+      bool = true
+      for(let color of this.colores){
+        if(color === producto.color){
+          bool = false
+        }
+      }
+      if(bool){
+        this.colores.push(nuevo)
+      }
+      
+    }
+    console.log(this.colores)
+  }
+
+  public cargarTallas(){
+    let bool = true
+    let nuevo = ""
+    for(let producto of this.detalles){
+      nuevo = producto.talla
+      bool = true
+
+      for(let talla of this.tallas){
+        if(talla === producto.talla){
+          bool = false
+        }
+      }
+      if(bool){
+        this.tallas.push(nuevo)
+      }
+      
+    }
+    console.log(this.tallas)
   }
 
 }

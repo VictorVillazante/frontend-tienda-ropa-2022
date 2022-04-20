@@ -21,18 +21,28 @@
                             <h5 class="card-title fw-bolder">Nombre del producto</h5>
                             <br>
                             <p class="card-text fw-bold">Colors</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            <div class="form-check" *ngFor="let color of colores">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    {{color}}
+                                </label>
+                            </div>   
                             <br>
                             <p class="card-text fw-bold">Size</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            <div class="form-check" *ngFor="let talla of tallas">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    {{talla}}
+                                </label>
+                            </div>  
                             <br>
                             <p class="card-text fw-bold">Price</p>
-                            <p class="card-text"><small class="text-muted">25.5 Bs</small></p>
+                            <p class="card-text"><small class="text-muted">{{detalles[0].precio}} Bs</small></p>
                             <br>
                             <button type="button" class="btn btn-dark">Agregar al carrito</button>
                             <hr>
                             <p class="card-text fw-bold">Description</p>
-                            <p class="card-text"><small class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</small></p>
+                            <p class="card-text"><small class="text-muted">{{detalles[0].descripcion}}</small></p>
                         </div>
                     </div>
                 </div>
@@ -41,3 +51,4 @@
     </div>
 </div>
 <app-footer-user></app-footer-user>
+
