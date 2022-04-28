@@ -6,7 +6,7 @@ import { Producto } from '../models/Producto';
 })
 export class ServiceProductoService{
     constructor(private http:HttpClient){}
-    Url='http://localhost:8080/productos/todos'
+    Url='http://localhost:8080/productos/todos?page=0&size=10';
     getProductos(){
         console.log("Obtener productos");
         return this.http.get<Producto[]>(this.Url);

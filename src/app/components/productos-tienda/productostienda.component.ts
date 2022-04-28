@@ -39,8 +39,8 @@ export class ProductosTiendaComponent implements OnInit{
     
   }
   obtenerTodosProductos(){
-    this.service.getProductos().subscribe(data=>{
-      this.productos=data;
+    this.service.getProductos().subscribe((data:any)=>{
+      this.productos=data.content;
       if(this.productos?.length==0){
         window.alert("Error al cargar productos");
       }
