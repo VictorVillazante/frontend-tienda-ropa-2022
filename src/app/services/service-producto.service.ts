@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Producto } from '../models/Producto';
+import { ProductosSinStock } from '../models/ProductosSinStock';
 @Injectable({
     providedIn:'root'
 })
@@ -43,6 +44,6 @@ export class ServiceProductoService{
     }
     getProductosSinStock(){
         console.log("Obtener productos sin stock");
-        return this.http.get<Object[]>("http://localhost:8080/productos/productosSinStock");
+        return this.http.get<ProductosSinStock[]>("http://localhost:8080/productos/productosSinStock");
     }
 }
