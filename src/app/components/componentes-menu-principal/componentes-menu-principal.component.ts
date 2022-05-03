@@ -19,7 +19,7 @@ export class ComponentesMenuPrincipalComponent implements OnInit {
     this.helper.customMessage.subscribe(msg => this.cantidad = msg);
   }
   buscarProductosSinStock(){
-    this.service.getProductosSinStock().subscribe(data=>{
+    this.service.getProductosPocoStock().subscribe(data=>{
       console.log(data);
       this.cantidad=data.length+"";
       this.helper.changeMessage(this.cantidad);
