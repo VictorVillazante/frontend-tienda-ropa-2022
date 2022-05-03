@@ -23,6 +23,7 @@ export class ComponentesMenuPrincipalComponent implements OnInit {
       console.log(data);
       this.cantidad=data.length+"";
       this.helper.changeMessage(this.cantidad);
+      this.helper.changeObjetosSinStock(data);
     })
   }
   
