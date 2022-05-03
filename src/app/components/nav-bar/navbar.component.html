@@ -6,8 +6,31 @@
           <span class="navbar-toggler-icon"></span>
         </button>
     </nav>
+    <i data-bs-toggle="modal" data-bs-target="#exampleModal" class="fa-solid fa-bell" style="font-size:24px;color: white; width: 60px; height: 60px; margin-right: 100px; display:flex; margin-top: 10px; border: white 2px solid; border-radius: 10px; flex-direction:column;justify-content: center; text-align: center; align-content: center;">
+        <div style="z-index: 2; font-size: 8px; display:flex; text-align: end; width: 100%; flex-direction: column; padding-right: 5px; height: 20%;">
+            <p id="nProductoStock0">1</p>
+        </div>
+    </i>
     <form class="form-inline my-2 my-lg-0" style="align-items: flex-end; margin-right: 20px;">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
+</div>
+
+<div style="background-color: aliceblue;" class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="height: 200px; width: 600px !important; background-color: aliceblue;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Productos con stock 0</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
 </div>

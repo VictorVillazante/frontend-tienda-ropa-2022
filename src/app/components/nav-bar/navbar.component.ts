@@ -15,8 +15,8 @@ export class NavBarComponent implements OnInit{
 
   constructor() {
   }
+  rootVar:number=0;
   ngOnInit(): void {
-
   }
 
 }

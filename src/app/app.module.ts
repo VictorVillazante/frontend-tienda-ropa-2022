@@ -30,6 +30,7 @@ import { ProductDetailsUserComponent } from './components/product-details-user/p
 import { ComponentesMenuPrincipalComponent } from './components/componentes-menu-principal/componentes-menu-principal.component';
 import { AccountUserComponent } from './components/account-user/account-user.component';
 import { CreateAccountUserComponent } from './components/create-account-user/create-account-user.component';
+import { HelperService } from './services/helper.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,7 +63,7 @@ import { CreateAccountUserComponent } from './components/create-account-user/cre
     CommonModule,
     NgbModule
   ],
-  providers: [ServiceAdm,ServiceProductoService],
+  providers: [ServiceAdm,ServiceProductoService,HelperService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
