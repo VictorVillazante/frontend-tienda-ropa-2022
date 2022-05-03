@@ -46,4 +46,8 @@ export class ServiceProductoService{
         console.log("Obtener productos sin stock");
         return this.http.get<ProductosSinStock[]>("http://localhost:8080/productos/productosSinStock");
     }
+    getProductosPocoStock(){
+        console.log("Obtener productos con stock menor a 10");
+        return this.http.get<ProductosSinStock[]>("http://localhost:8080/productos/productosPocoStock");
+    }
 }
