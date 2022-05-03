@@ -41,4 +41,8 @@ export class ServiceProductoService{
         console.log("Eliminar producto service-producto");
         return this.http.delete<Producto>("http://localhost:8080/productos/delete/"+producto.idProducto);
     }
+    getProductosSinStock(){
+        console.log("Obtener productos sin stock");
+        return this.http.get<Object[]>("http://localhost:8080/productos/productosSinStock");
+    }
 }
