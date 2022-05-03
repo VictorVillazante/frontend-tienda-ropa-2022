@@ -21,15 +21,29 @@
     <div class="modal-dialog modal-dialog-centered" style="height: 200px; width: 600px !important; background-color: aliceblue;">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Productos con stock 0</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Productos con stock menor a 10</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <p *ngFor="let prodsinstock of productosSinStock">{{prodsinstock.nombreProducto}}</p>
+            <div class="modal-body" style="height: 400px;overflow:scroll;">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre de producto</th>
+                            <th scope="col">Talla</th>
+                            <th scope="col">Color</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let prodsinstock of productosSinStock">
+                            <th scope="row">{{prodsinstock.nombreProducto}}</th>
+                            <td>{{prodsinstock.nombreTalla}}</td>
+                            <td>{{prodsinstock.nombreColor}}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
             </div>
         </div>
     </div>
