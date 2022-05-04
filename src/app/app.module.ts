@@ -16,6 +16,7 @@ import { NavBarComponent } from './components/nav-bar/navbar.component';
 import { GestionUsuarioComponent } from './components/gestion-usuario/gestionusuario.component';
 import { ListadoUsuarioComponent } from './components/listado-usuario/listadousuario.component';
 import { CategoriaComponent } from './components/categorias/categorias.component';
+import { VentasProductosComponent } from './components/ventas-productos/ventas-productos.component';
 //Servicios
 import { ServiceAdm } from './services/service-adm.service';
 import { ServiceProductoService } from './services/service-producto.service';
@@ -51,7 +52,8 @@ import { HelperService } from './services/helper.service';
     ProductDetailsUserComponent,
     ComponentesMenuPrincipalComponent,
     AccountUserComponent,
-    CreateAccountUserComponent
+    CreateAccountUserComponent,
+    VentasProductosComponent
   ],
   imports: [
     BrowserModule,

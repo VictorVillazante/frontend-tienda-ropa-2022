@@ -11,6 +11,7 @@ import { ProductDetailsUserComponent } from './components/product-details-user/p
 import { ListCarritoUserComponent } from './components/list-carrito-user/list-carrito-user.component';
 import { CategoriaComponent } from './components/categorias/categorias.component';
 import { ComponentesMenuPrincipalComponent } from './components/componentes-menu-principal/componentes-menu-principal.component';
+import { VentasProductosComponent } from './components/ventas-productos/ventas-productos.component';
 const APP_ROUTES: Routes = [
     { path: 'descripcionproductos', component: DescripcionProductosComponent },
     { path: 'menuprincipal', 
@@ -24,6 +25,7 @@ const APP_ROUTES: Routes = [
         { path: 'gestionusuario/:id', component: GestionUsuarioComponent},
         { path: 'gestionusuario', component: GestionUsuarioComponent},
         { path: 'listadousuario', component: ListadoUsuarioComponent},
+        { path: 'ventasproductos', component: VentasProductosComponent},
         { path: 'categoriaproducto', component: CategoriaComponent},
       ]
     },
