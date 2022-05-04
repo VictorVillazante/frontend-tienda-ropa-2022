@@ -7,16 +7,31 @@
         <h1>VENTAS DE PRODUCTOS</h1>
     </div>
     <div id="contenedor-tabla">
-        <input matInput [matDatepicker]="picker">
-        <mat-hint>MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
+        <div style="display: flex; flex-direction: row;">
+            <div style="margin-right: 40%;">
+                <mat-hint>Desde MM/DD/YYYY:</mat-hint>
+                <input matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </div>
+            <div>
+                <mat-hint>Hasta MM/DD/YYYY:</mat-hint>
+                <input [matDatepicker]="picker2">
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+            </div>
+        </div>
+        <div>
+            <button type="button" class="btn btn-info">Buscar</button>
+        </div>
         <div id="img-fondo">
             <table class="table table-striped" id="tabla-usuarios">
                 <tr>
-                    <th class="Nombre" scope="col">Nombre usuario</th>
-                    <th class="Email" scope="col">Email</th>
-                    <th classscope="col">Opción</th>
+                    <th class="Nombre" scope="col">Nombre de producto/th>
+                        <th class="Email" scope="col">Comprador</th>
+                        <th classscope="col">Fecha de venta</th>
+                        <th classscope="col">Cantidad</th>
+                        <th classscope="col">Costo total</th>
                 </tr>
                 <tr>
                     <td>Juanito</td>

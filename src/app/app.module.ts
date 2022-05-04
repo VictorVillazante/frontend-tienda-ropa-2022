@@ -34,6 +34,9 @@ import { CreateAccountUserComponent } from './components/create-account-user/cre
 import { HelperService } from './services/helper.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,7 +70,10 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     CommonModule,
     NgbModule,
     BrowserAnimationsModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatNativeDateModule ,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [ServiceAdm,ServiceProductoService,HelperService],
   bootstrap: [AppComponent]
