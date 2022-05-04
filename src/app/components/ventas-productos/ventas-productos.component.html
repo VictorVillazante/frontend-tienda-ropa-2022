@@ -4,9 +4,13 @@
     </div>
     <div id="titulo">
         <i id="icono" class="fa-solid fa-users"></i>
-        <h1>USUARIOS DE LA TIENDA</h1>
+        <h1>VENTAS DE PRODUCTOS</h1>
     </div>
     <div id="contenedor-tabla">
+        <input matInput [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
         <div id="img-fondo">
             <table class="table table-striped" id="tabla-usuarios">
                 <tr>

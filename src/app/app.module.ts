@@ -32,6 +32,8 @@ import { ComponentesMenuPrincipalComponent } from './components/componentes-menu
 import { AccountUserComponent } from './components/account-user/account-user.component';
 import { CreateAccountUserComponent } from './components/create-account-user/create-account-user.component';
 import { HelperService } from './services/helper.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +65,9 @@ import { HelperService } from './services/helper.service';
     ReactiveFormsModule,
     HttpClientModule,
     CommonModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule,
+    MatDatepickerModule
   ],
   providers: [ServiceAdm,ServiceProductoService,HelperService],
   bootstrap: [AppComponent]
