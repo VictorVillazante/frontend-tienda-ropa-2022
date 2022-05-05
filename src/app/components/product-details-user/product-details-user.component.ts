@@ -1,6 +1,7 @@
 import { RestService } from './../../services/rest.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { CarritoService } from 'src/app/services/carrito.service';
 
 @Component({
   selector: 'app-product-details-user',
@@ -21,18 +22,18 @@ export class ProductDetailsUserComponent implements OnInit {
   public high=Math.round(this.getRandomArbitrary(500,499));
   public width=Math.round(this.getRandomArbitrary(500,499))
 
-  constructor(private route:ActivatedRoute, private RestService:RestService) { }
+  constructor(private route:ActivatedRoute, private RestService:RestService, private Carrito:CarritoService) { }
 
   ngOnInit(): void {
     this.image="https://picsum.photos/"+this.width+"/"+this.high+""    
 
     this.route.paramMap.subscribe((paramMap:any) =>{
       const {params} = paramMap
-      this.nombre = params.nombre            
+      this.nombre = params.nombre          
     })
     console.log(this.nombre)
-    console.log(this.detalles)
-    this.cargarData(this.nombre)
+    this.cargarData(this.nombre)      
+    
     /*this.cargarColores()
     this.cargarTallas()
     console.log(this.detalles)*/
@@ -45,12 +46,12 @@ export class ProductDetailsUserComponent implements OnInit {
 
   public cargarData(param:string){
     this.RestService.get('http://localhost:8080/productos/buscarc?nompro='+param)
-    .subscribe(respuesta=>{
-      
+    .subscribe((respuesta:any)=>{
       this.detalles=respuesta
       this.cargarColores()
       this.cargarTallas()
-
+      console.log(this.detalles)
+      
     })
   }
 
@@ -92,6 +93,28 @@ export class ProductDetailsUserComponent implements OnInit {
     }
     console.log(this.tallas)
   }
+
+  public agregarCarrito(){
+    if(confirm("Agregar este producto al carrito")){
+      console.log(this.detalles[0].nombre)
+      console.log(this.detalles[0].idProducto)
+      console.log(this.detalles[0].precio)
+      console.log(this.detalles[0].color)
+      console.log(this.detalles[0].talla)
+      this.Carrito.setCache('carrito',{
+        id: this.detalles[0].idProducto,
+        nombre: this.detalles[0].nombre,
+        precio: this.detalles[0].precio,
+        cantidad: 1
+        /*color: 'string',
+        talla: 'string',*/
+      });
+    }
+
+  }
+
+
+  
 
 }
 
