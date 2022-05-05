@@ -21,7 +21,7 @@ export class ABMproductosComponent implements OnInit{
   nombre!: string;
   categoriaForm!:FormGroup;
   //categorias: Categoria[] | undefined;
-  productoBuscado: Producto = {idProducto:null,nombre:"...",precio:0,descripcion:"Producto no encontrado",idCategoria:1};
+  productoBuscado: Producto = {idProducto:null,nombre:"...",precio:0,descripcion:"Producto no encontrado",idCategoria:1,disponibilidad:0,descuento:0};
   seleccionados:number[]=[];
   categorias = [
     { idCategoria: 1, nombre: "United States" },
@@ -41,7 +41,7 @@ export class ABMproductosComponent implements OnInit{
     this.activatedRoute.params.subscribe( params => {
       if(params['nombre']===null || params['nombre']===undefined || typeof params['nombre'] === 'undefined'){
         this.nombre="...";
-        this.productoBuscado = {idProducto:null,nombre:"...",precio:0,descripcion:"Producto no encontrado",idCategoria:1};
+        this.productoBuscado = {idProducto:null,nombre:"...",precio:0,descripcion:"Producto no encontrado",idCategoria:1,disponibilidad:0,descuento:0};
       }else{
         this.nombre = params['nombre'];
       }
@@ -68,7 +68,7 @@ export class ABMproductosComponent implements OnInit{
       console.log(data[0]);
       if(data[0]===null || data[0]===undefined || typeof data[0] === 'undefined'){
         this.nombre="...";
-        this.productoBuscado = {idProducto:null,nombre:"...",precio:0,descripcion:"Producto no encontrado",idCategoria:1};
+        this.productoBuscado = {idProducto:null,nombre:"...",precio:0,descripcion:"Producto no encontrado",idCategoria:1,disponibilidad:0,descuento:0};
       }else{
         this.productoBuscado=data[0]
         this.nombre = this.productoBuscado.nombre;

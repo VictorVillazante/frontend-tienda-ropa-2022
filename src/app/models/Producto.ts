@@ -4,4 +4,6 @@ export class Producto{
     public descripcion!:string;
     public precio!:number;
     public idCategoria!:number;
+    public disponibilidad!:any;
+    public descuento!:number;
 }

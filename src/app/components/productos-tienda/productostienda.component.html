@@ -21,6 +21,8 @@
                         <th>Talla</th>
                         <th>Color</th>
                         <th>Descripcion</th>
+                        <th>Descuento</th>
+                        <th>Disponibilidad</th>
                     </tr>
                     <tr id="contenido-tabla" *ngFor="let producto of productos" (click)="direccionarABMproductos(producto.nombre)">
                         <td>{{producto.idProducto}}</td>
@@ -31,6 +33,13 @@
                         <td>Talla</td>
                         <td>Color</td>
                         <td>{{producto.descripcion}}</td>
+                        <td>{{producto.descuento+"%"}}</td>
+                        <td *ngIf="producto.disponibilidad==0">
+                            <button type="button" class="btn btn-primary" (click)="crearNuevoProducto()" style="width: 300px; ">Habilitar</button>
+                        </td>
+                        <td *ngIf="producto.disponibilidad==1">
+                            <button type="button" class="btn btn-danger" (click)="crearNuevoProducto()" style="width: 300px; ">Deshabilitar</button>
+                        </td>
                     </tr>
                 </table>
             </div>
