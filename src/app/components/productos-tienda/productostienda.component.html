@@ -35,10 +35,10 @@
                         <td>{{producto.descripcion}}</td>
                         <td>{{producto.descuento+"%"}}</td>
                         <td *ngIf="producto.disponibilidad==0">
-                            <button type="button" class="btn btn-primary" (click)="crearNuevoProducto()" style="width: 300px; ">Habilitar</button>
+                            <button type="button" class="btn btn-primary" (click)="$event.stopPropagation()" (click)="habilitarProducto(producto.idProducto)" style="width: 300px; ">Habilitar</button>
                         </td>
                         <td *ngIf="producto.disponibilidad==1">
-                            <button type="button" class="btn btn-danger" (click)="crearNuevoProducto()" style="width: 300px; ">Deshabilitar</button>
+                            <button type="button" class="btn btn-danger" (click)="$event.stopPropagation()" (click)="deshabilitarProducto(producto.idProducto)" style="width: 300px; ">Deshabilitar</button>
                         </td>
                     </tr>
                 </table>

@@ -10,7 +10,6 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 import { ActivatedRoute } from '@angular/router';
-
 @Component({
   selector: 'app-abm-productos',
   templateUrl: './abmproductos.component.html', 

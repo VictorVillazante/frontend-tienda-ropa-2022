@@ -47,4 +47,14 @@ export class ProductosTiendaComponent implements OnInit{
     })
     
   }
+  deshabilitarProducto(idProducto:number){
+    this.service.deshabilitarProducto(idProducto).subscribe(data=>{
+      this.obtenerTodosProductos();
+    })
+  }
+  habilitarProducto(idProducto:number){
+    this.service.habilitarProducto(idProducto).subscribe(data=>{
+      this.obtenerTodosProductos();
+    })
+  }
 }

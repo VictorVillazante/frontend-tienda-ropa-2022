@@ -50,4 +50,12 @@ export class ServiceProductoService{
         console.log("Obtener productos con stock menor a 10");
         return this.http.get<ProductosSinStock[]>("http://localhost:8080/productos/productosPocoStock");
     }
+    habilitarProducto(id:number){
+        console.log("Actualizar producto service-producto");
+        return this.http.put<Producto>('http://localhost:8080/productos/habilitar/'+id,{})
+    }
+    deshabilitarProducto(id:number){
+        console.log("Actualizar producto service-producto");
+        return this.http.put<Producto>('http://localhost:8080/productos/deshabilitar/'+id,{});
+    }
 }
