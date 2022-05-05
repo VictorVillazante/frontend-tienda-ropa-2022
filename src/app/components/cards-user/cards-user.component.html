@@ -3,6 +3,6 @@
     <div class="card-body">
       <h5 class="card-title fw-bolder">{{dataEntrante.nombre}}</h5>
       <p class="card-text">{{dataEntrante.precio}} Bs.</p>
-      <button type="button" class="btn btn-primary" (click)="agregarCarrito()">Añadir al carrito</button>
+      <button type="button" class="btn btn-primary" *ngIf='dataEntrante.precio "normal"'>Añadir al carrito</button>
     </div>
 </div>

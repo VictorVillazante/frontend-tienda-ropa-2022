@@ -27,7 +27,7 @@
 
                 <form [formGroup]="busquedaForm" (submit)="Busqueda()" class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" formControlName="busqueda">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <button class="btn btn-outline-success" type="submit" [disabled]="busquedaForm.invalid">Search</button>
                 </form>
 
                 <li class="nav-item">

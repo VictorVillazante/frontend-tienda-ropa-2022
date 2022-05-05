@@ -16,6 +16,9 @@ export class ProductDetailsUserComponent implements OnInit {
 
   public nombre: any
 
+  public selectColor = ""
+  public selectTalla = ""
+
 
   public image:string | undefined;
 
@@ -105,9 +108,9 @@ export class ProductDetailsUserComponent implements OnInit {
         id: this.detalles[0].idProducto,
         nombre: this.detalles[0].nombre,
         precio: this.detalles[0].precio,
-        cantidad: 1
-        /*color: 'string',
-        talla: 'string',*/
+        cantidad: 1,
+        color: this.selectColor,
+        talla: this.selectTalla
       });
     }
 

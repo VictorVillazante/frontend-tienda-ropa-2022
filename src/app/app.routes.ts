@@ -1,3 +1,4 @@
+import { ProductsUserComponent } from './components/products-user/products-user.component';
 import { CreateAccountUserComponent } from './components/create-account-user/create-account-user.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ABMproductosComponent } from './components/ABM-productos/abmproductos.component';
@@ -35,6 +36,14 @@ const APP_ROUTES: Routes = [
       {
         path:'products/details/:nombre',
         component:ProductDetailsUserComponent
+      },
+      {
+        path:'products/categories/:categoria',
+        component:ProductsUserComponent
+      },
+      {
+        path:'products/search/:nombre',
+        component:ProductsUserComponent
       },
       {
         path:'carrito',

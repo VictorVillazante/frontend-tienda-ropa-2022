@@ -1,0 +1,36 @@
+<app-navigation-menu-user></app-navigation-menu-user>
+<section id="productos">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-1">
+            <app-list-categories-user></app-list-categories-user>
+        </div>
+  
+  
+        <div class="col-11 text-center text-uppercase">
+          <div class="container">
+            <div class="row">
+              <h1>Nuestros Productos</h1>
+              <p *ngIf='productos?.length === 0'>No Se han encontrados resultados de la busqueda o categoria</p>
+
+            </div>
+            <div class="row">
+  
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mt-3" 
+                  *ngFor="let producto of productos">
+                    <app-cards-user [dataEntrante]="producto"></app-cards-user>
+                  </div>
+                </div>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+<app-footer-user></app-footer-user>

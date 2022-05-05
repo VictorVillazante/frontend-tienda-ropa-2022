@@ -30,6 +30,8 @@ import { ProductDetailsUserComponent } from './components/product-details-user/p
 import { ComponentesMenuPrincipalComponent } from './components/componentes-menu-principal/componentes-menu-principal.component';
 import { AccountUserComponent } from './components/account-user/account-user.component';
 import { CreateAccountUserComponent } from './components/create-account-user/create-account-user.component';
+import { ProductsUserComponent } from './components/products-user/products-user.component';
+import { ListCategoriesUserComponent } from './components/list-categories-user/list-categories-user.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +52,9 @@ import { CreateAccountUserComponent } from './components/create-account-user/cre
     ProductDetailsUserComponent,
     ComponentesMenuPrincipalComponent,
     AccountUserComponent,
-    CreateAccountUserComponent
+    CreateAccountUserComponent,
+    ProductsUserComponent,
+    ListCategoriesUserComponent
   ],
   imports: [
     BrowserModule,

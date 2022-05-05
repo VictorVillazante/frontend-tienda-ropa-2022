@@ -15,7 +15,6 @@ export class PrincipalUserComponent implements OnInit {
 
   public listaProductos:any = []
   
-  public listCategorias:any = []
 
   public page=0
 
@@ -23,7 +22,6 @@ export class PrincipalUserComponent implements OnInit {
 
   ngOnInit(): void {
     this.cargarData(this.page,8);
-    this.cargarCategorias();
     this.subtitulo="Diseños originales XD"
   }
 
@@ -34,20 +32,21 @@ export class PrincipalUserComponent implements OnInit {
     })
   }
 
-  public cargarCategorias(){
+  /*public cargarCategorias(){
     this.RestService.get('http://localhost:8080/categorias/todos')
     .subscribe(respuesta=>{
       this.listCategorias = respuesta
     })
-  }
+  }*/
 
-  public productosCategoria(categoria:Categoria){
+  /*public productosCategoria(categoria:Categoria){
     this.RestService.get('http://localhost:8080/productos/categoria?id_categoria='+categoria.idCategoria)
     .subscribe(respuesta=>{
       this.listaProductos = respuesta
     })
     this.subtitulo = "CATEGORIA: "+categoria.nombre
-  }
+  }*/
+
   public mas (){
     this.page++
     this.cargarData(this.page,8)
