@@ -2,7 +2,12 @@
     <a href="http://localhost:4200/products/details/{{dataEntrante.nombre}}"><img [src]="image" class="card-img-top" style="width: 17rem; height: 20rem;" alt="..."></a>
     <div class="card-body">
       <h5 class="card-title fw-bolder">{{dataEntrante.nombre}}</h5>
-      <p class="card-text">{{dataEntrante.precio}} Bs.</p>
-      <button type="button" class="btn btn-primary" *ngIf='dataEntrante.precio "normal"'>Añadir al carrito</button>
+
+      <p class="card-text" *ngIf='dataEntrante.descuento == null'>{{dataEntrante.precio}} Bs.</p>
+      
+      <div class="p-1 mb-2 bg-success text-white" *ngIf='dataEntrante.descuento != null'>Descuento del {{dataEntrante.descuento}}%</div>
+      <h5 *ngIf='dataEntrante.descuento != null'>Ahora: {{descuento}}</h5>
+      <h6 *ngIf='dataEntrante.descuento != null'>Precio anterior <del>{{dataEntrante.precio}}</del></h6>
+      <div class="p-1 mb-2 bg-danger text-white" *ngIf='dataEntrante.disponibilidad != null'>Articulo no disponible</div>
     </div>
 </div>

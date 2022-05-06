@@ -16,26 +16,33 @@
                             <br>
                             <p class="card-text fw-bold">Colors</p>
                             <div class="form-check" *ngFor="let color of colores">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault2" [(ngModel)]="selectColor" value="{{color}}" checked>
+                                <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault2" [(ngModel)]="selectColor" value="{{color}}" checked (click)="verificarAgotado()" >
                                 <label class="form-check-label" for="flexRadioDefault1">
                                     {{color}}
                                 </label>
-                            </div>
-                            <p>apretado: {{selectColor}}</p>    
+                            </div>  
                             <br>
                             <p class="card-text fw-bold">Size</p>
                             <div class="form-check" *ngFor="let talla of tallas">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1" [(ngModel)]="selectTalla"  value="{{talla}}" checked>
+                                <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1" [(ngModel)]="selectTalla"  value="{{talla}}" checked (click)="verificarAgotado()">
                                 <label class="form-check-label" for="flexRadioDefault1">
                                     {{talla}}
                                 </label>
-                            </div>
-                            <p>apretado: {{selectTalla}}</p>  
+                            </div> 
                             <br>
                             <p class="card-text fw-bold">Price</p>
-                            <p class="card-text"><small class="text-muted">{{detalles[0].precio}} Bs</small></p>
+                            <div class="p-1 mb-2 bg-danger text-white" *ngIf='detalles[0].disponibilidad == false'>Articulo no disponible</div>
+
+                            <p class="card-text" *ngIf='detalles[0].descuento == null'>{{detalles[0].precio}} Bs.</p>
+      
+                            <div class="p-1 mb-2 bg-success text-white" *ngIf='detalles[0].descuento != null'>Descuento del {{detalles[0].descuento}}%</div>
+                            <h5 *ngIf='detalles[0].descuento != null'>Ahora: {{descuento}}</h5>
+                            <h6 *ngIf='detalles[0].descuento != null'>Precio anterior <del>{{detalles[0].precio}}</del></h6>
+                            
+
                             <br>
-                            <button type="button" class="btn btn-dark" (click)="agregarCarrito()">Agregar al carrito</button>
+                            <button type="button" class="btn btn-danger" *ngIf='aux == false && detalles[0].disponibilidad != false'>No hay stock</button>
+                            <button type="button" class="btn btn-dark" (click)="agregarCarrito() " *ngIf='aux == true && detalles[0].disponibilidad != false'>Agregar al carrito</button>
                             <hr>
                             <p class="card-text fw-bold">Description</p>
                             <p class="card-text"><small class="text-muted">{{detalles[0].descripcion}}</small></p>

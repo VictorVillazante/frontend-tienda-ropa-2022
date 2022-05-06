@@ -27,6 +27,7 @@ export class PrincipalUserComponent implements OnInit {
 
   public cargarData(page:number, size:number){
     this.RestService.get('http://localhost:8080/productos/todos?page='+page+'&size='+size)
+    //this.RestService.get('http://localhost:8080/productos/todos')
     .subscribe((respuesta:any)=>{
       this.listaProductos = respuesta.content
     })

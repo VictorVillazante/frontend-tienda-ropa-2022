@@ -8,17 +8,24 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CardsUserComponent implements OnInit {
 
+
+
   @Input() dataEntrante: any;
 
   public high=Math.round(this.getRandomArbitrary(300,250));
   public width=Math.round(this.getRandomArbitrary(200,150))
   
   public image:string | undefined;
+  public descuento:number | undefined
 
   constructor(private Carrito:CarritoService) { }
 
   ngOnInit(): void {
     this.image="https://picsum.photos/"+this.width+"/"+this.high+""
+    this.descuentoProducto()
+  }
+  public descuentoProducto(){
+    this.descuento = this.dataEntrante.precio-(this.dataEntrante.precio*(this.dataEntrante.descuento/100))
   }
   public getRandomArbitrary(min: number, max: number) {
     return Math.random() * (max - min) + min;
