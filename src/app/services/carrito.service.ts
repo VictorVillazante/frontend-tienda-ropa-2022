@@ -1,14 +1,15 @@
 import { Product } from './../models/Product';
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
+import { Detalle } from '../models/Detalle';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarritoService {
 
-  productos: Product[];
-  productos$: Subject<Product[]>;
+  productos: Detalle[];
+  productos$: Subject<Detalle[]>;
 
   constructor() { 
     this.productos =[
@@ -30,7 +31,7 @@ export class CarritoService {
   setCarrito(producto: Product){
     this.productos.push(producto)
   }*/
-  deleteData(key: string, producto: Product){
+  deleteData(key: string, producto: Detalle){
     for(let i=0;i<this.productos.length; i++){
       if(producto == this.productos[i]){
         this.productos.splice(i,1);
@@ -40,9 +41,9 @@ export class CarritoService {
     }
   }
 
-  setCache(key: string, data:Product){
+  setCache(key: string, data:Detalle){
     
-    let productos: Product[]=[];
+    let productos: Detalle[]=[];
     let aux = true
     if(localStorage.getItem(key)===null){
       
@@ -99,7 +100,7 @@ export class CarritoService {
     }
   }
 
-  costoTotal(productos:Product[]){
+  costoTotal(productos:Detalle[]){
     let total = 0
     for(let i=0;i<productos.length; i++){
       total = total + productos[i].precio
@@ -107,7 +108,7 @@ export class CarritoService {
     return total;
   }
 
-  getObs(key: string): Observable<Product[]>{
+  getObs(key: string): Observable<Detalle[]>{
     if(localStorage.getItem(key)===null){
       this.productos$.next(this.productos)
       return this.productos$.asObservable()
@@ -118,7 +119,7 @@ export class CarritoService {
       return this.productos$.asObservable()
     }
   }
-  modificar(key: string, data: Product){
+  modificar(key: string, data: Detalle){
     for(let i=0;i<this.productos.length; i++){
       if(data.nombre == this.productos[i].nombre){
           this.productos[i].cantidad= data.cantidad;

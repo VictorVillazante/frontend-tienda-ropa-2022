@@ -2,13 +2,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-2 col-sm-12">
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-                <li class="list-group-item">A fourth item</li>
-                <li class="list-group-item">And a fifth one</li>
-              </ul>
+            <app-list-categories-user></app-list-categories-user>
         </div>
         <div class="col-lg-10 col-sm-12">
             <div class="card border-light mb-2">
@@ -18,28 +12,30 @@
                     </div>
                     <div class="col-md-5">
                         <div class="card-body ms-5">
-                            <h5 class="card-title fw-bolder">Nombre del producto</h5>
+                            <h5 class="card-title fw-bolder">{{detalles[0].nombre}}</h5>
                             <br>
                             <p class="card-text fw-bold">Colors</p>
                             <div class="form-check" *ngFor="let color of colores">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                                <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault2" [(ngModel)]="selectColor" value="{{color}}" checked>
                                 <label class="form-check-label" for="flexRadioDefault1">
                                     {{color}}
                                 </label>
-                            </div>   
+                            </div>
+                            <p>apretado: {{selectColor}}</p>    
                             <br>
                             <p class="card-text fw-bold">Size</p>
                             <div class="form-check" *ngFor="let talla of tallas">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                                <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1" [(ngModel)]="selectTalla"  value="{{talla}}" checked>
                                 <label class="form-check-label" for="flexRadioDefault1">
                                     {{talla}}
                                 </label>
-                            </div>  
+                            </div>
+                            <p>apretado: {{selectTalla}}</p>  
                             <br>
                             <p class="card-text fw-bold">Price</p>
                             <p class="card-text"><small class="text-muted">{{detalles[0].precio}} Bs</small></p>
                             <br>
-                            <button type="button" class="btn btn-dark">Agregar al carrito</button>
+                            <button type="button" class="btn btn-dark" (click)="agregarCarrito()">Agregar al carrito</button>
                             <hr>
                             <p class="card-text fw-bold">Description</p>
                             <p class="card-text"><small class="text-muted">{{detalles[0].descripcion}}</small></p>

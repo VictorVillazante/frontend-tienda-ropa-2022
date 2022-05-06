@@ -1,3 +1,4 @@
+import { Detalle } from './../../models/Detalle';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { CarritoService } from './../../services/carrito.service';
 import { Product } from './../../models/Product';
@@ -10,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListCarritoUserComponent implements OnInit {
 
-  listaProductos: Product[] = [];
+  listaProductos: Detalle[] = [];
   total:number | undefined;
 
   public productoForm!: FormGroup;
@@ -47,12 +48,12 @@ export class ListCarritoUserComponent implements OnInit {
     return Math.random() * (max - min) + min;
   }
 
-  deleteData(producto:Product){
+  deleteData(producto:Detalle){
     if(confirm("Borrar producto del carrito")){
       this.Carrito.deleteData('carrito',producto)
     }
   }
-  costoTotal(productos:Product[]){
+  costoTotal(productos:Detalle[]){
     let total = 0
     for(let i=0;i<productos.length; i++){
       total = total + productos[i].cantidad*productos[i].precio

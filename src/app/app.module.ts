@@ -37,6 +37,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { ProductsUserComponent } from './components/products-user/products-user.component';
+import { ListCategoriesUserComponent } from './components/list-categories-user/list-categories-user.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +60,8 @@ import { MatInputModule } from '@angular/material/input';
     ComponentesMenuPrincipalComponent,
     AccountUserComponent,
     CreateAccountUserComponent,
-    VentasProductosComponent
+    VentasProductosComponent,
+    ListCategoriesUserComponent
   ],
   imports: [
     BrowserModule,

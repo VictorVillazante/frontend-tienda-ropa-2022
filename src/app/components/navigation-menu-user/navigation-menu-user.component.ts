@@ -32,11 +32,8 @@ export class NavigationMenuUserComponent implements OnInit {
   }
 
   public Busqueda(){    
-    this.RestService.get("http://localhost:8080/productos/buscar?nombre="+this.busquedaForm.value.busqueda)
-    .subscribe(respuesta =>{
-      this.resBusqueda =respuesta;
-      console.log(this.resBusqueda)
-    })
+    //this.router.navigateByUrl('/products/search/'+this.busquedaForm.value.busqueda)
+    this.router.navigate(['/', 'products','search',this.busquedaForm.value.busqueda]);
   }
   buscarMenuAdministrador(){
     this.router.navigate(['/menuprincipal']);
