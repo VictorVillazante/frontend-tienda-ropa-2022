@@ -3,7 +3,7 @@
         <h1>CATEGORIAS</h1>
     </div>
     <div id="contenido">
-        <div id="form-categorias">
+        <div class="form-categorias">
             <p>BUSCAR</p>
             <p>ID de categoria</p>
             <div class="input-group mb-3">
@@ -22,8 +22,39 @@
             </div>
             <button type="button" class="btn btn-info" (click)="agregarCategoria()">Agregar Categoria</button>
             <button type="button" class="btn btn-info" (click)="modificarCategoria()">Modificar Categoria</button>
-            <button type="button" class="btn btn-danger" (click)="eliminarCategoria()">Eliminar Categoria</button>
+            <!-- <button type="button" class="btn btn-danger" (click)="eliminarCategoria()">Eliminar Categoria</button> -->
         </div>
-
+        <div class="form-categorias">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
