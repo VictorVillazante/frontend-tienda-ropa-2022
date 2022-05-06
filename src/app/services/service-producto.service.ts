@@ -27,7 +27,8 @@ export class ServiceProductoService{
             "descripcion": producto.descripcion,
             "precio": producto.precio,
             "idCategoria": producto.idCategoria,
-            "descuento":producto.descuento
+            "descuento":producto.descuento,
+            "disponibilidad":1
           });
     }
     actualizarProducto(idProducto:number,producto:Producto){

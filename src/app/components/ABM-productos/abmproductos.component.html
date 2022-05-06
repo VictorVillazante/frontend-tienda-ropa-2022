@@ -113,7 +113,7 @@
                         </td>
                         <td>
                             <div class="input-group mb-3">
-                                <input min="1" pattern="^[0-9]+" aria-label="" aria-describedby="basic-addon1" placeholder="..." class="form-control input-formato-pequenio" type="number" name="cantidad" id="cantidad">
+                                <input [(ngModel)]="stock" min="1" pattern="^[0-9]+" aria-label="" aria-describedby="basic-addon1" placeholder="..." class="form-control input-formato-pequenio" type="number" name="cantidad" id="cantidad">
                             </div>
                         </td>
                         <td>
@@ -168,7 +168,7 @@
                     <div id="botones-inline">
                         <button type="button" class="btn btn-primary" (click)="agregarProducto()">Registrar</button>
                         <button type="button" class="btn btn-primary" (click)="actualizarProducto()">Actualizar</button>
-                        <button type="button" class="btn btn-danger" (click)="eliminarProducto()">Eliminar</button>
+                        <!-- <button type="button" class="btn btn-danger" (click)="eliminarProducto()">Eliminar</button> -->
                     </div>
                 </div>
             </div>

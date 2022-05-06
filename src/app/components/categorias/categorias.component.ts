@@ -51,6 +51,8 @@ export class CategoriaComponent implements OnInit{
         this.service_categoria.getCategorias().subscribe(data=>{
           this.categorias=data;
           console.log(this.categorias);
+          alert("Se agrego la categoria con exito");
+
         });
     });
     this.router.navigate(['menuprincipal/categoriaproducto']);
@@ -65,6 +67,8 @@ export class CategoriaComponent implements OnInit{
         this.service_categoria.getCategorias().subscribe(data=>{
           this.categorias=data;
           console.log(this.categorias);
+          alert("Se modifico la categoria con exito");
+
         });
     });
     this.router.navigate(['menuprincipal/categoriaproducto']);

@@ -22,6 +22,7 @@ export class ABMproductosComponent implements OnInit{
   //categorias: Categoria[] | undefined;
   productoBuscado: Producto = {idProducto:null,nombre:"...",precio:0,descripcion:"Producto no encontrado",idCategoria:1,disponibilidad:0,descuento:0};
   seleccionados:number[]=[];
+  stock:number=0;
   categorias = [
     { idCategoria: 1, nombre: "United States" },
     { idCategoria: 2, nombre: "Australia" },

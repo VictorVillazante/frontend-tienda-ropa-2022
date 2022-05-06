@@ -47,11 +47,13 @@ export class ProductosTiendaComponent implements OnInit{
     
   }
   deshabilitarProducto(idProducto:number){
+    console.log("Habilitar producto");
     this.service.deshabilitarProducto(idProducto).subscribe(data=>{
       this.obtenerTodosProductos();
     })
   }
   habilitarProducto(idProducto:number){
+    console.log("Deshabilitar producto");
     this.service.habilitarProducto(idProducto).subscribe(data=>{
       this.obtenerTodosProductos();
     })
