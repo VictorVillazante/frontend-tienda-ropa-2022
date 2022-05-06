@@ -19,6 +19,10 @@ export class ProductDetailsUserComponent implements OnInit {
   public selectColor = ""
   public selectTalla = ""
 
+  public aux: any
+
+  public descuento:number | undefined
+
 
   public image:string | undefined;
 
@@ -35,12 +39,20 @@ export class ProductDetailsUserComponent implements OnInit {
       this.nombre = params.nombre          
     })
     console.log(this.nombre)
-    this.cargarData(this.nombre)      
+    this.cargarData(this.nombre)
+        
     
     /*this.cargarColores()
     this.cargarTallas()
     console.log(this.detalles)*/
 
+  }
+
+  public cargarDescuento(){
+    console.log("a")
+    this.descuento = this.detalles[0].precio-(this.detalles[0].precio*(this.detalles[0].descuento/100))
+    console.log("descuento "+this.detalles[0].descuento)
+    console.log("precio"+this.detalles[0].precio)
   }
 
   public getRandomArbitrary(min: number, max: number) {
@@ -53,6 +65,7 @@ export class ProductDetailsUserComponent implements OnInit {
       this.detalles=respuesta
       this.cargarColores()
       this.cargarTallas()
+      this.cargarDescuento()
       console.log(this.detalles)
       
     })
@@ -98,7 +111,12 @@ export class ProductDetailsUserComponent implements OnInit {
   }
 
   public agregarCarrito(){
+    let aux = this.detalles[0].precio;
+    if(this.descuento != null){
+      aux = this.descuento
+    } 
     if(confirm("Agregar este producto al carrito")){
+
       console.log(this.detalles[0].nombre)
       console.log(this.detalles[0].idProducto)
       console.log(this.detalles[0].precio)
@@ -107,7 +125,7 @@ export class ProductDetailsUserComponent implements OnInit {
       this.Carrito.setCache('carrito',{
         id: this.detalles[0].idProducto,
         nombre: this.detalles[0].nombre,
-        precio: this.detalles[0].precio,
+        precio: aux,
         cantidad: 1,
         color: this.selectColor,
         talla: this.selectTalla
@@ -116,8 +134,13 @@ export class ProductDetailsUserComponent implements OnInit {
 
   }
 
-
-  
-
+  public verificarAgotado(){
+    this.aux=false
+    for(let detalle of this.detalles){
+      if(this.selectColor == detalle.color && this.selectTalla == detalle.talla){
+        this.aux=true
+      }
+    }
+  }
 }
 

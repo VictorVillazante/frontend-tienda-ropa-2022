@@ -53,6 +53,47 @@
                     </div>
                 </div>
             </div>
+            <div class="container">
+                <div class="row row-cols-auto">
+                    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mt-3" *ngFor="let detalleProducto of listaProductos">
+                        <app-cards-user [dataEntrante]="detalleProducto"></app-cards-user>
+                    </div>
+                </div>
+                <div>
+
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col">
+                                <a class="nav-link" (click)="menos()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+                          <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                        </svg>
+                                </a>
+                            </div>
+
+                            <div class="col">
+                                <h1>{{page}}</h1>
+                            </div>
+
+                            <div class="col">
+                                <a class="nav-link" (click)="mas()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                          <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                        </svg>
+                                </a>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
 
         </div>
     </div>

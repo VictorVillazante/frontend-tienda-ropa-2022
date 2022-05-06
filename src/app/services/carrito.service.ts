@@ -54,7 +54,7 @@ export class CarritoService {
     }
     else{
       for(let i=0;i<this.productos.length; i++){
-        if(data.nombre == this.productos[i].nombre){
+        if(data.nombre == this.productos[i].nombre && data.color == this.productos[i].color && data.talla ==this.productos[i].talla){
             console.log("producto repetido")
             this.productos[i].cantidad++;
             this.productos$.next(this.productos)    

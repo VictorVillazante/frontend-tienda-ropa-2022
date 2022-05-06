@@ -26,7 +26,8 @@ export class ServiceProductoService{
             "nombre": producto.nombre,
             "descripcion": producto.descripcion,
             "precio": producto.precio,
-            "idCategoria": producto.idCategoria
+            "idCategoria": producto.idCategoria,
+            "descuento":producto.descuento
           });
     }
     actualizarProducto(idProducto:number,producto:Producto){
@@ -35,7 +36,8 @@ export class ServiceProductoService{
             "nombre":producto.nombre,
             "descripcion":producto.descripcion,
             "precio":producto.precio,
-            "idCategoria":producto.idCategoria
+            "idCategoria":producto.idCategoria,
+            "descuento":producto.descuento
         });
     }
     eliminarProducto(producto:Producto){
