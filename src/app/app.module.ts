@@ -61,6 +61,7 @@ import { ListCategoriesUserComponent } from './components/list-categories-user/l
     AccountUserComponent,
     CreateAccountUserComponent,
     VentasProductosComponent,
+    ProductsUserComponent,
     ListCategoriesUserComponent
   ],
   imports: [

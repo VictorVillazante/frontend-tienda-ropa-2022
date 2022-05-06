@@ -24,39 +24,38 @@
 </div>
 
 <section id="productos">
-  <div class="container">
-    <div class="row">
+    <div class="container">
+        <div class="row">
 
-      <div class="col-1">
-        <app-list-categories-user></app-list-categories-user>
-      </div>
-
-      <div class="col-11 text-center text-uppercase">
-        <div class="container">
-          <div class="row">
-            <h1>Nuestros Productos</h1>
-            <small>{{subtitulo}}</small> 
-          </div>
-          <div class="row">
-
-            <div class="container">
-              <div class="row">
-                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mt-3" 
-                *ngFor="let detalleProducto of listaProductos">
-                  <app-cards-user [dataEntrante]="detalleProducto"></app-cards-user>
-                </div>
-              </div>
-              <a (click)="mas()">mas</a>
-              <h1>{{page}}</h1>
-              <a (click)="menos()">menos</a>
+            <div class="col-1">
+                <app-list-categories-user></app-list-categories-user>
             </div>
 
-          </div>
-        </div>
-      </div>
+            <div class="col-11 text-center text-uppercase">
+                <div class="container">
+                    <div class="row">
+                        <h1>Nuestros Productos</h1>
+                        <small>{{subtitulo}}</small>
+                    </div>
+                    <div class="row">
 
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mt-3" *ngFor="let detalleProducto of listaProductos">
+                                    <app-cards-user [dataEntrante]="detalleProducto"></app-cards-user>
+                                </div>
+                            </div>
+                            <a (click)="mas()">mas</a>
+                            <h1>{{page}}</h1>
+                            <a (click)="menos()">menos</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
-  </div>
 </section>
 <app-footer-user></app-footer-user>
 <!--[routerLink]="['/','products','detail',detalleProducto?.nombre]"-->
