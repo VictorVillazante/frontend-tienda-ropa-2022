@@ -8,9 +8,9 @@ import { ProductosSinStock } from '../models/ProductosSinStock';
 export class ServiceProductoService{
     constructor(private http:HttpClient){}
     Url='http://localhost:8080/productos/todos?page=0&size=10';
-    getProductos(){
+    getProductos(page:number){
         console.log("Obtener productos");
-        return this.http.get<Producto[]>(this.Url);
+        return this.http.get<Producto[]>('http://localhost:8080/productos/todos?page='+page+'&size=10');
     }
     buscarProductoPorID(name:String){
         console.log("Buscar productos por ID");

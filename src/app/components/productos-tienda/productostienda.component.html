@@ -44,6 +44,11 @@
                 </table>
             </div>
         </div>
+        <div style="display: flex; flex-direction: row; width: 100%; text-align: center; align-items: center; justify-content: center;">
+            <img src="../../../assets/img/arrow_left.png" style="width: 30px;height:30px;" (click)="anteriorPagina()" />
+            <p style="font-size: 32px; margin: 10px 80px;">{{pagina}}</p>
+            <img src="../../../assets/img/arrow_right.png" style="width: 30px;height:30px" (click)="siguientePagina()" />
+        </div>
         <button type="button" class="btn btn-primary" (click)="crearNuevoProducto()" style="width: 300px; ">Registrar nuevo producto</button>
     </div>
 </div>

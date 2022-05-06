@@ -12,16 +12,14 @@ import { Producto } from 'src/app/models/Producto';
 export class ProductosTiendaComponent implements OnInit{
   nombre:string="";
   productos:Producto[] | undefined;
-
+  pagina:number=0;
   constructor(private service:ServiceProductoService, private router: Router) {
       console.log("Clase ProductosTiendaComponent");
       this.nombre="";
   }
   ngOnInit(): void {
     this.nombre="";
-    this.service.getProductos().subscribe(data=>{
-      this.productos=data;
-    })
+    this.obtenerTodosProductos();
   }
   direccionarABMproductos(nombre:any){
     this.router.navigate(['menuprincipal/abmproductos',nombre]);
@@ -39,8 +37,9 @@ export class ProductosTiendaComponent implements OnInit{
     
   }
   obtenerTodosProductos(){
-    this.service.getProductos().subscribe((data:any)=>{
+    this.service.getProductos(this.pagina).subscribe((data:any)=>{
       this.productos=data.content;
+      this.max=data.totalPages-1;
       if(this.productos?.length==0){
         window.alert("Error al cargar productos");
       }
@@ -56,5 +55,16 @@ export class ProductosTiendaComponent implements OnInit{
     this.service.habilitarProducto(idProducto).subscribe(data=>{
       this.obtenerTodosProductos();
     })
+  }
+  max:number=0;
+  siguientePagina(){
+    console.log("Pagina:"+this.pagina);
+    console.log("Max:"+this.max);
+    this.pagina=(this.pagina<this.max)?this.pagina+1:this.pagina;
+    this.obtenerTodosProductos();
+  }
+  anteriorPagina(){
+    this.pagina=(this.pagina>0)?this.pagina-1:0;
+    this.obtenerTodosProductos();
   }
 }
