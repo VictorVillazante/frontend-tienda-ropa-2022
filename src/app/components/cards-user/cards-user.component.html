@@ -8,6 +8,6 @@
       <div class="p-1 mb-2 bg-success text-white" *ngIf='dataEntrante.descuento != null'>Descuento del {{dataEntrante.descuento}}%</div>
       <h5 *ngIf='dataEntrante.descuento != null'>Ahora: {{descuento}}</h5>
       <h6 *ngIf='dataEntrante.descuento != null'>Precio anterior <del>{{dataEntrante.precio}}</del></h6>
-      <div class="p-1 mb-2 bg-danger text-white" *ngIf='dataEntrante.disponibilidad != null'>Articulo no disponible</div>
+      <div class="p-1 mb-2 bg-danger text-white" *ngIf='dataEntrante.disponibilidad == 0'>Articulo no disponible</div>
     </div>
 </div>
