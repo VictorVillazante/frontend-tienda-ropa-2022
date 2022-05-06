@@ -39,6 +39,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ProductsUserComponent } from './components/products-user/products-user.component';
 import { ListCategoriesUserComponent } from './components/list-categories-user/list-categories-user.component';
+import { ProductosCategoriaComponent } from './components/productos-categoria/productos-categoria.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,7 +63,8 @@ import { ListCategoriesUserComponent } from './components/list-categories-user/l
     CreateAccountUserComponent,
     VentasProductosComponent,
     ProductsUserComponent,
-    ListCategoriesUserComponent
+    ListCategoriesUserComponent,
+    ProductosCategoriaComponent
   ],
   imports: [
     BrowserModule,
