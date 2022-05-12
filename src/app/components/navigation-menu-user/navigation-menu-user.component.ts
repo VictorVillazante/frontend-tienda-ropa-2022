@@ -38,5 +38,8 @@ export class NavigationMenuUserComponent implements OnInit {
   buscarMenuAdministrador(){
     this.router.navigate(['/menuprincipal']);
   }
+  redirigirPerfilUsuario(){
+    this.router.navigate(['/perfil']);
+  }
 
 }

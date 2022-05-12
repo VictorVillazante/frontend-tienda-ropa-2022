@@ -13,6 +13,8 @@ import { ListCarritoUserComponent } from './components/list-carrito-user/list-ca
 import { CategoriaComponent } from './components/categorias/categorias.component';
 import { ComponentesMenuPrincipalComponent } from './components/componentes-menu-principal/componentes-menu-principal.component';
 import { VentasProductosComponent } from './components/ventas-productos/ventas-productos.component';
+import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuario.component';
+import { PerfilUsuarioDatosComponent } from './components/perfil-usuario-datos/perfil-usuario-datos.component';
 const APP_ROUTES: Routes = [
     { path: 'descripcionproductos', component: DescripcionProductosComponent },
     { path: 'menuprincipal', 
@@ -54,6 +56,14 @@ const APP_ROUTES: Routes = [
       {
         path:'account/register',
         component:CreateAccountUserComponent
+      },
+      {
+        path:'perfil',
+        component:PerfilUsuarioComponent
+      },
+      {
+        path:'perfil/datos',
+        component:PerfilUsuarioDatosComponent
       },
 ];
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES, {useHash: false});

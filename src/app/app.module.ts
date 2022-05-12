@@ -40,6 +40,8 @@ import { MatInputModule } from '@angular/material/input';
 import { ProductsUserComponent } from './components/products-user/products-user.component';
 import { ListCategoriesUserComponent } from './components/list-categories-user/list-categories-user.component';
 import { ProductosCategoriaComponent } from './components/productos-categoria/productos-categoria.component';
+import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuario.component';
+import { PerfilUsuarioDatosComponent } from './components/perfil-usuario-datos/perfil-usuario-datos.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,7 +66,9 @@ import { ProductosCategoriaComponent } from './components/productos-categoria/pr
     VentasProductosComponent,
     ProductsUserComponent,
     ListCategoriesUserComponent,
-    ProductosCategoriaComponent
+    ProductosCategoriaComponent,
+    PerfilUsuarioComponent,
+    PerfilUsuarioDatosComponent
   ],
   imports: [
     BrowserModule,

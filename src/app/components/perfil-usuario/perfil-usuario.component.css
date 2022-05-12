@@ -1,0 +1,34 @@
+#contenido-principal {
+    width: 100%;
+    height: 100%;
+}
+
+#opciones {
+    display: flex;
+    flex-direction: row;
+}
+
+.opcion-menu {
+    width: 18rem;
+    height: 220px !important;
+    margin-right: 2%;
+    overflow: hidden;
+    transition: all 1s ease-out;
+    border: #212529 2px solid;
+}
+
+.card-text {
+    background-color: transparent;
+}
+
+.opcion-menu:hover {
+    width: 20rem;
+    height: 240px;
+    background-color: #212529;
+    color: #eeeeee;
+    transition: all 1s ease-out;
+}
+
+.card-body {
+    background-color: transparent;
+}
