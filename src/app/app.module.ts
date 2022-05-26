@@ -42,6 +42,7 @@ import { ListCategoriesUserComponent } from './components/list-categories-user/l
 import { ProductosCategoriaComponent } from './components/productos-categoria/productos-categoria.component';
 import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuario.component';
 import { PerfilUsuarioDatosComponent } from './components/perfil-usuario-datos/perfil-usuario-datos.component';
+import { UsuarioListadoComprasComponent } from './components/usuario-listado-compras/usuario-listado-compras.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,7 +69,8 @@ import { PerfilUsuarioDatosComponent } from './components/perfil-usuario-datos/p
     ListCategoriesUserComponent,
     ProductosCategoriaComponent,
     PerfilUsuarioComponent,
-    PerfilUsuarioDatosComponent
+    PerfilUsuarioDatosComponent,
+    UsuarioListadoComprasComponent
   ],
   imports: [
     BrowserModule,

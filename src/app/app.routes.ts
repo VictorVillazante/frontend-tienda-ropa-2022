@@ -15,6 +15,7 @@ import { ComponentesMenuPrincipalComponent } from './components/componentes-menu
 import { VentasProductosComponent } from './components/ventas-productos/ventas-productos.component';
 import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuario.component';
 import { PerfilUsuarioDatosComponent } from './components/perfil-usuario-datos/perfil-usuario-datos.component';
+import { UsuarioListadoComprasComponent } from './components/usuario-listado-compras/usuario-listado-compras.component';
 const APP_ROUTES: Routes = [
     { path: 'descripcionproductos', component: DescripcionProductosComponent },
     { path: 'menuprincipal', 
@@ -64,6 +65,10 @@ const APP_ROUTES: Routes = [
       {
         path:'perfil/datos',
         component:PerfilUsuarioDatosComponent
+      },
+      {
+        path:'perfil/compras',
+        component:UsuarioListadoComprasComponent
       },
 ];
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES, {useHash: false});
