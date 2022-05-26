@@ -1,0 +1,31 @@
+<app-navigation-menu-user></app-navigation-menu-user>
+<div id="pagina-principal">
+    <div id="bienvenido">
+        <h2>Bienvenido</h2>
+    </div>
+    <div id="titulo">
+        <i id="icono" class="fa-solid fa-users"></i>
+        <h1>TUS COMPRAS</h1>
+    </div>
+    <div id="contenedor-tabla">
+        <div id="img-fondo">
+            <table class="table table-striped" id="tabla-usuarios">
+                <tr>
+                    <th class="Nombre" scope="col">Fecha de compra</th>
+                    <th class="Email" scope="col">Cantidad</th>
+                    <th classscope="col">Nombre de producto</th>
+                    <th classscope="col">Precio</th>
+                    <th classscope="col">Costo total</th>
+
+                </tr>
+                <tr *ngFor="let compras of listadoCompras">
+                    <td>{{compras.fechaCompra}}</td>
+                    <td>{{compras.cantidad}}</td>
+                    <td>{{compras.nombreProducto}}</td>
+                    <td>{{compras.precio}}</td>
+                    <td>{{compras.costoTotal}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

@@ -16,4 +16,7 @@ export class PerfilUsuarioComponent implements OnInit {
   verDatosPerfil(){
     this.router.navigate(["/perfil/datos"]);
   }
+  verComprasUsuario(){
+    this.router.navigate(["/perfil/compras"]);
+  }
 }
