@@ -41,5 +41,12 @@ export class PerfilUsuarioDatosComponent implements OnInit {
       }
     })
   }
+  actualizarDatosUsuario(){
+    console.log("Actualizar usuario");
+    this.usuarioSeleccionado.contraseña=this.password;
+    this.service.actualizarDatosUsuario(this.usuarioSeleccionado).subscribe(data=>{
 
+    });
+
+  }
 }
