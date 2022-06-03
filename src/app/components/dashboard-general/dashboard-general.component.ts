@@ -16,6 +16,9 @@ export class DashboardGeneralComponent implements OnInit {
 
   public titulo:String =""
 
+  public TotalProductosvendidos: number=0;
+  public i: number=0;
+
   lista:number[]=[1998,2000,2010, 2011];
   
 
@@ -33,6 +36,8 @@ export class DashboardGeneralComponent implements OnInit {
     this.cargarCategoriaYear(Number(year));
     this.cargarTallaYear(Number(year));
     this.cargarTotalVenta(Number(year));
+    this.modoificarCantidad();
+    
     this.titulo = "Fecha "+   year
   }
 
@@ -48,6 +53,11 @@ export class DashboardGeneralComponent implements OnInit {
     this.RestService.get('http://localhost:8080/compra/ventas/categorias?year='+year)
     .subscribe((respuesta:any)=>{
       this.listaCategorias = respuesta
+      for(let categoria of respuesta){
+        this.TotalProductosvendidos = this.TotalProductosvendidos + categoria.cantidad
+        console.log(categoria.cantidad)
+      }
+      console.log("Total "+this.TotalProductosvendidos)
       console.log(this.listaCategorias)
     })
   }
@@ -72,6 +82,10 @@ export class DashboardGeneralComponent implements OnInit {
     return Math.random() * (max - min) + min;
   }
 
-
-
+  modoificarCantidad(){
+    for(let categoria of this.listaCategorias){
+      this.TotalProductosvendidos = categoria.cantidad;
+      console.log("Cantidad"+categoria.cantidad)
+    }  
+  }
 }
