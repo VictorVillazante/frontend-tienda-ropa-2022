@@ -1,3 +1,5 @@
+import { DashboardCategoriaComponent } from './components/dashboard-categoria/dashboard-categoria.component';
+import { DashboardGeneralComponent } from './components/dashboard-general/dashboard-general.component';
 import { ProductsUserComponent } from './components/products-user/products-user.component';
 import { CreateAccountUserComponent } from './components/create-account-user/create-account-user.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -31,6 +33,14 @@ const APP_ROUTES: Routes = [
         { path: 'listadousuario', component: ListadoUsuarioComponent},
         { path: 'ventasproductos', component: VentasProductosComponent},
         { path: 'categoriaproducto', component: CategoriaComponent},
+        {
+          path:'dashboard/general/:year',
+          component:DashboardGeneralComponent
+        },
+        {
+          path:'dashboard/:categoria/:year',
+          component:DashboardCategoriaComponent
+        },
       ]
     },
     
@@ -70,6 +80,7 @@ const APP_ROUTES: Routes = [
         path:'perfil/compras',
         component:UsuarioListadoComprasComponent
       },
+
 ];
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES, {useHash: false});
 

@@ -1,0 +1,86 @@
+<app-navigation-menu-user></app-navigation-menu-user>
+<div class="container">
+    <div class="row">
+        <div class="col">
+
+            <div class="container">
+                <div class="row">
+                    <p>
+                        <select name="miselect" [(ngModel)]="year">
+                        <option [value]="item" *ngFor="let item of lista">{{item}}</option>
+                        </select>
+
+                        <select name="miselect" [(ngModel)]="categoria">
+                        <option [value]="item.nombre" *ngFor="let item of ListaCategorias">{{item.nombre}}</option>
+                        </select>
+                        <a type="button" class="btn btn-primary" href="http://localhost:4200/menuprincipal/dashboard/{{categoria}}/{{year}}">Buscar</a>
+                    </p>
+                    {{categoria}} {{year}}
+
+
+                </div>
+
+                <div class="row" style="margin-bottom: 50px;">
+                    <h2>{{titulo}} </h2>
+
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <h4 class="card-title">TOP 2</h4>
+                            <img [src]="image" class="card-img-top" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ListaProductosByCategoryYear[1].nombre}}</h5>
+                                <p class="card-text">Cantidad vendida: {{ListaProductosByCategoryYear[1].cantidad}}</p>
+                                <p class="card-text">Total de ventas: {{ListaProductosByCategoryYear[1].precioTotal}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <h4 class="card-title">TOP 1</h4>
+                            <img [src]="image" class="card-img-top" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ListaProductosByCategoryYear[0].nombre}}</h5>
+                                <p class="card-text">Cantidad vendida: {{ListaProductosByCategoryYear[0].cantidad}}</p>
+                                <p class="card-text">Total de ventas: {{ListaProductosByCategoryYear[0].precioTotal}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="row">
+
+                    <div class="container" style="background-color: #1D2833">
+                        <div class="row">
+                            <h1 style="color: white;">Productos mas vendidos</h1>
+                        </div>
+                        <div class="row" *ngFor="let producto of ListaProductosByCategoryYear">
+                            <div class="card" style="width: 30rem; height: 8rem; background-color: teal; color: white; margin-bottom: 15px;">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col">
+                                            <img [src]="image" class="card-img-top" style="width: 6rem; height: 6rem;" alt="...">
+                                        </div>
+                                        <div class="col">
+                                            <div class="card-body">
+                                                <h3 class="card-title">{{producto.nombre}}</h3>
+                                                <p class="card-text">Total en ventas: {{producto.precioTotal}}$</p>
+                                                <p class="card-text">Cantidad vendido: {{producto .cantidad}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
