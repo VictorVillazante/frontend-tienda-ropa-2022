@@ -1,0 +1,153 @@
+<app-navigation-menu-user></app-navigation-menu-user>
+<div class="container">
+    <div class="row">
+      <div class="col">
+          
+        <div class="container">
+            <div class="row">
+                    <h2>{{titulo}} </h2>
+ 
+                    Seleccione la Fecha que desea
+                    <p>
+                        <select name="miselect" [(ngModel)]="seleccionado">
+                        <option [value]="item" *ngFor="let item of lista">{{item}}</option>
+                        </select>
+                        <a type="button" class="btn btn-primary" href="http://localhost:4200/menuprincipal/dashboard/general/{{seleccionado}}">Buscar</a>
+                     </p>
+                  
+                     
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="card" style="width: 12rem;">
+                        <div class="card-body">
+                          <h5 class="card-title">Categoria mas vendida</h5>
+                          <h4 class="card-subtitle mb-1 text-muted">{{listaCategorias[0].nombre}}</h4>
+                          <h5 class="card-subtitle mb-1 text-muted">Cantidad vendida: {{listaCategorias[0].cantidad}}</h5>
+                          <h4 class="card-subtitle mb-1 text-muted">Total de ventas: {{listaCategorias[0].precioTotal}}</h4>                      
+                        </div>
+                      </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 12rem;">
+                        <div class="card-body">
+                          <h5 class="card-title">Talla mas vendida</h5>
+                          <h4 class="card-subtitle mb-1 text-muted">{{listaTallas[0].nombre}}</h4>
+                          <h5 class="card-subtitle mb-1 text-muted">Cantidad vendida: {{listaTallas[0].cantidad}}</h5>
+                          <h4 class="card-subtitle mb-1 text-muted">Total de ventas: {{listaTallas[0].precioTotal}}</h4>                      
+                        </div>
+                      </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="card" style="width: 12rem;">
+                        <div class="card-body">
+                          <h5 class="card-title">Total de ventas realizado:</h5>
+                          <h4 class="card-subtitle mb-1 text-muted">Cantidad de ventas:{{TotalVenta.cantidadCompras}}</h4>
+                          <h5 class="card-subtitle mb-1 text-muted">Total de ventas: {{TotalVenta.costoTotal}}</h5>                 
+                        </div>
+                      </div>
+                </div>
+                <div class="col">
+                    boton 2
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="board">
+                    <div class="titulo_grafica">
+                        <h3 class="t_grafica">Título del Gráfico</h3>
+                    </div>
+                    <div class="sub_board">
+                        <div class="sep_board"></div>
+                        <div class="cont_board">
+                            <div class="graf_board">
+                                <div class="barra">
+                                    <div class="sub_barra b1">
+                                        <div class="tag_g">35%</div>
+                                        <div class="tag_leyenda">día 1</div>
+                                    </div>
+                                </div>
+                                <div class="barra">
+                                    <div class="sub_barra b2">
+                                        <div class="tag_g">45%</div>
+                                        <div class="tag_leyenda">día 2</div>
+                                    </div>
+                                </div>
+                                <div class="barra">
+                                    <div class="sub_barra b3">
+                                        <div class="tag_g">55%</div>
+                                        <div class="tag_leyenda">día 3</div>
+                                    </div>
+                                </div>
+                                <div class="barra">
+                                    <div class="sub_barra b4">
+                                        <div class="tag_g">75%</div>
+                                        <div class="tag_leyenda">día 4</div>
+                                    </div>
+                                </div>
+                                <div class="barra">
+                                    <div class="sub_barra b5">
+                                        <div class="tag_g">85%</div>
+                                        <div class="tag_leyenda">día 5</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tag_board">
+                                <div class="sub_tag_board">
+                                    <div>100</div>
+                                    <div>90</div>
+                                    <div>80</div>
+                                    <div>70</div>
+                                    <div>60</div>
+                                    <div>50</div>
+                                    <div>40</div>
+                                    <div>30</div>
+                                    <div>20</div>
+                                    <div>10</div>
+                                </div>
+                            </div>
+                       </div> 
+                        <div class="sep_board"></div>
+                   </div>    
+                </div>
+            </div>
+
+        </div>
+
+      </div>
+      <div class="col">
+
+        <div class="container">
+            <div class="row">
+                Productos mas vendidos
+            </div>
+            <div class="row"  *ngFor="let producto of listaProductos">
+                <div class="card" style="width: 40rem; height: 7rem;">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <img [src]="image" class="card-img-top" style="width: 6rem; height: 6rem;" alt="...">
+                            </div>
+                            <div class="col">
+                                <div class="card-body">
+                                    <h3 class="card-title">{{producto.nombre}}</h3>
+                                    <p class="card-text">Total en ventas: {{producto.precioTotal}}$</p>
+                                    <p class="card-text">Cantidad vendido: {{producto.cantidad}}</p>
+                                  </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+

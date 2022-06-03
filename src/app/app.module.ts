@@ -43,6 +43,7 @@ import { ProductosCategoriaComponent } from './components/productos-categoria/pr
 import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuario.component';
 import { PerfilUsuarioDatosComponent } from './components/perfil-usuario-datos/perfil-usuario-datos.component';
 import { UsuarioListadoComprasComponent } from './components/usuario-listado-compras/usuario-listado-compras.component';
+import { DashboardGeneralComponent } from './components/dashboard-general/dashboard-general.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,7 +71,8 @@ import { UsuarioListadoComprasComponent } from './components/usuario-listado-com
     ProductosCategoriaComponent,
     PerfilUsuarioComponent,
     PerfilUsuarioDatosComponent,
-    UsuarioListadoComprasComponent
+    UsuarioListadoComprasComponent,
+    DashboardGeneralComponent
   ],
   imports: [
     BrowserModule,
