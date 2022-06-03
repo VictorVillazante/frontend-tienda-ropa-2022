@@ -10,7 +10,6 @@ import { VentasService } from '../../services/ventas.service';
 export class UsuarioListadoComprasComponent implements OnInit {
   listadoCompras: ComprasUsuario[] = [];
   constructor(private service:VentasService) { 
-    this.obtenerComprasUsuario();
 
   }
 
@@ -21,9 +20,9 @@ export class UsuarioListadoComprasComponent implements OnInit {
     this.service.getVentasUsuarios(2).subscribe((data:any)=>{
       console.log(data);
       this.listadoCompras=data;
-      if(this.listadoCompras?.length==0){
-        window.alert("No se tiene compras registradas");
-      }
     })
+    if(this.listadoCompras?.length==0){
+      window.alert("No se tiene compras registradas");
+    }
   }
 }

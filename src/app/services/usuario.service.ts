@@ -19,6 +19,9 @@ export class UsuarioService {
   actualizarDatosUsuario(usuario:User){
     console.log("Actualizar usuario service");
     console.log(usuario);
-    return this.http.put<String>("http://localhost:8080/usuarios/usuario/"+usuario.idUsuario,usuario,{responseType:undefined});
-}
+    return this.http.put("http://localhost:8080/usuarios/usuario/"+usuario.idUsuario,usuario,{responseType:'text'});
+  }
+  getUsuariosTodos(pagina:number){
+    return this.http.get<User[]>("http://localhost:8080/usuarios/todos?page=0&size=10");
+  }
 }

@@ -10,13 +10,15 @@
         <div id="img-fondo">
             <table class="table table-striped" id="tabla-usuarios">
                 <tr>
+                    <th class="" scope="col">ID usuario</th>
                     <th class="Nombre" scope="col">Nombre usuario</th>
                     <th class="Email" scope="col">Email</th>
                     <th classscope="col">Opción</th>
                 </tr>
-                <tr>
-                    <td>Juanito</td>
-                    <td>juanito@gmail.com</td>
+                <tr *ngFor="let usuario of usuarios">
+                    <td>{{usuario.idUsuario}}</td>
+                    <td>{{usuario.nombre+" "+usuario.apellido}}</td>
+                    <td>{{usuario.email}}</td>
                     <td>
                         <div id="opciones-botones-usuario">
                             <button type="button" class="btn btn-primary" (click)="verMas(1)">Ver mas</button>
@@ -24,66 +26,7 @@
                         </div>
                     </td>
                 </tr>
-                <tr>
-                    <td>Juanito</td>
-                    <td>juanito@gmail.com</td>
-                    <td>
-                        <div id="opciones-botones-usuario">
-                            <button type="button" class="btn btn-primary" (click)="verMas(1)">Ver mas</button>
-                            <button type="button" class="btn btn-danger">Eliminar</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Juanito</td>
-                    <td>juanito@gmail.com</td>
-                    <td>
-                        <div id="opciones-botones-usuario">
-                            <button type="button" class="btn btn-primary" (click)="verMas(1)">Ver mas</button>
-                            <button type="button" class="btn btn-danger">Eliminar</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Juanito</td>
-                    <td>juanito@gmail.com</td>
-                    <td>
-                        <div id="opciones-botones-usuario">
-                            <button type="button" class="btn btn-primary" (click)="verMas(1)">Ver mas</button>
-                            <button type="button" class="btn btn-danger">Eliminar</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Juanito</td>
-                    <td>juanito@gmail.com</td>
-                    <td>
-                        <div id="opciones-botones-usuario">
-                            <button type="button" class="btn btn-primary" (click)="verMas(1)">Ver mas</button>
-                            <button type="button" class="btn btn-danger">Eliminar</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Juanito</td>
-                    <td>juanito@gmail.com</td>
-                    <td>
-                        <div id="opciones-botones-usuario">
-                            <button type="button" class="btn btn-primary" (click)="verMas(1)">Ver mas</button>
-                            <button type="button" class="btn btn-danger">Eliminar</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Juanito</td>
-                    <td>juanito@gmail.com</td>
-                    <td>
-                        <div id="opciones-botones-usuario">
-                            <button type="button" class="btn btn-primary" (click)="verMas(1)">Ver mas</button>
-                            <button type="button" class="btn btn-danger">Eliminar</button>
-                        </div>
-                    </td>
-                </tr>
+
 
             </table>
         </div>

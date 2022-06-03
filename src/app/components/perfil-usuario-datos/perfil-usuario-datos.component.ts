@@ -45,7 +45,7 @@ export class PerfilUsuarioDatosComponent implements OnInit {
     console.log("Actualizar usuario");
     this.usuarioSeleccionado.contraseña=this.password;
     this.service.actualizarDatosUsuario(this.usuarioSeleccionado).subscribe(data=>{
-
+      alert("Datos actualizados correctamente");
     });
 
   }
