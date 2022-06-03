@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { identifierModuleUrl } from '@angular/compiler';
 import { ActivatedRoute } from '@angular/router';
 import { ServiceAdm } from 'src/app/services/service-adm.service';
+import { UsuarioService } from '../../services/usuario.service';
 @Component({
   selector: 'app-gestion-usuario',
   templateUrl: './gestionusuario.component.html',
@@ -12,7 +13,7 @@ import { ServiceAdm } from 'src/app/services/service-adm.service';
 export class GestionUsuarioComponent implements OnInit{
   id!: any;
   usuarioSeleccionado:any=undefined;
-  constructor(private service:ServiceAdm,private router: Router,private activatedRoute:ActivatedRoute) {
+  constructor(private service:ServiceAdm,private router: Router,private activatedRoute:ActivatedRoute,private serviceUsuario:UsuarioService) {
       console.log("Clase ABMproductosComponent");
       this.activatedRoute.params.subscribe( params => {
         if(params['id']===null || params['id']===undefined || typeof params['id'] === 'undefined'){
@@ -36,9 +37,9 @@ export class GestionUsuarioComponent implements OnInit{
   }
   buscarUsuarioPorID(){
     console.log("El usuario ha buscar es:"+this.id);
-    this.service.getUsuarios(this.id).subscribe(data=>{
-      console.log(data[0]);
-      if(data[0]===null || data[0]===undefined || typeof data[0] === 'undefined'){
+    this.serviceUsuario.getUsuarios(this.id).subscribe(data=>{
+      console.log(data);
+      if(data===null || data===undefined || typeof data === 'undefined'){
         this.id="...";
         this.usuarioSeleccionado = {
           id_usuario:undefined,
@@ -47,7 +48,7 @@ export class GestionUsuarioComponent implements OnInit{
           email:""
         };
       }else{
-        this.usuarioSeleccionado=data[0];
+        this.usuarioSeleccionado=data;
         this.id = this.usuarioSeleccionado.id;
       }
     })
