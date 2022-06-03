@@ -22,6 +22,11 @@ export class UsuarioService {
     return this.http.put("http://localhost:8080/usuarios/usuario/"+usuario.idUsuario,usuario,{responseType:'text'});
   }
   getUsuariosTodos(pagina:number){
-    return this.http.get<User[]>("http://localhost:8080/usuarios/todos?page=0&size=10");
+    return this.http.get<User[]>("http://localhost:8080/usuarios/todos?page="+pagina+"&size=10");
+  }
+  getComentariosUsuario(id:number){
+    console.log("obtener comentarios del usuario");
+    return this.http.get<Object[]>("http://localhost:8080/usuarios/comentarios/usuario/"+id);
+
   }
 }

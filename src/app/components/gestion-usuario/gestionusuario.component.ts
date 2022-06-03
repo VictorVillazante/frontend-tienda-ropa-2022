@@ -11,15 +11,21 @@ import { UsuarioService } from '../../services/usuario.service';
   styleUrls: ['./gestionusuario.component.css']
 })
 export class GestionUsuarioComponent implements OnInit{
+  comentarios:any;
   id!: any;
-  usuarioSeleccionado:any=undefined;
+  usuarioSeleccionado:any = {
+    id_usuario:"",
+    nombre:"",
+    apellido:"",
+    email:""
+  };
   constructor(private service:ServiceAdm,private router: Router,private activatedRoute:ActivatedRoute,private serviceUsuario:UsuarioService) {
       console.log("Clase ABMproductosComponent");
       this.activatedRoute.params.subscribe( params => {
         if(params['id']===null || params['id']===undefined || typeof params['id'] === 'undefined'){
           this.id="...";
           this.usuarioSeleccionado = {
-            id_usuario:undefined,
+            id_usuario:"",
             nombre:"",
             apellido:"",
             email:""
@@ -27,11 +33,24 @@ export class GestionUsuarioComponent implements OnInit{
         }else{
           this.id = params['id'];
           this.buscarUsuarioPorID();
+          this.obtenerComentariosDeUsuario(this.id);
         }
         console.log("parametro");
         console.log(params['id']);
         console.log(this.id);
       });
+  }
+  obtenerComentariosDeUsuario(id: any) {
+    console.log("Buscar comentarios de usuario:"+id);
+    this.serviceUsuario.getComentariosUsuario(this.id).subscribe(data=>{
+      console.log("obtener comentarios del usuario devolviendo data");
+      console.log(data);
+      this.comentarios=data;
+      if(data===null || data===undefined || typeof data === 'undefined'){
+        window.alert("No se encontraron comentarios del usuario seleccionado");
+      }else{
+      }
+    })
   }
   ngOnInit(): void {
   }
@@ -42,7 +61,7 @@ export class GestionUsuarioComponent implements OnInit{
       if(data===null || data===undefined || typeof data === 'undefined'){
         this.id="...";
         this.usuarioSeleccionado = {
-          id_usuario:undefined,
+          id_usuario:"",
           nombre:"",
           apellido:"",
           email:""

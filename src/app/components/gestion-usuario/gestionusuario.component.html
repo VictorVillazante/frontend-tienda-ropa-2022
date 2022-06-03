@@ -8,11 +8,10 @@
                 <div id="info-usuario">
                     <div id="info-usuario-respaldo">
                         <div id="nombre-usuario">
-                            <p>Nombre de usuario: Juanito</p>
+                            <p>Nombre de usuario: {{usuarioSeleccionado.nombre+" "+usuarioSeleccionado.apellido}}</p>
                         </div>
                         <div id="inf-usuario-dos">
-                            Promedio de calificaciones: 4 estrellas
-                            <br> email: juanito@gmail.com
+                            <br> email: {{usuarioSeleccionado.email}}
                             <br> Numero de compras: 69 compras
                             <br> Fecha creacion de cuenta: dd/mm/aaaa
                         </div>
@@ -20,14 +19,27 @@
                 </div>
             </div>
             <div id="comentarios">
-
-            </div>
-            <div id="opciones">
-                <input type="number" name="" id="" value="1" min="1" pattern="^[0-9]+">
-                <p>Dias</p>
-                <button type="button" class="btn btn-primary" style="width: 400px;">Definir periodo prohibicion comentarios</button>
-                <button type="button" class="btn btn-primary">Prohibir comentarios</button>
-                <button type="button" class="btn btn-primary">Eliminar usuario</button>
+                <table class="table table-striped" id="tabla-usuarios">
+                    <tr>
+                        <th class="" scope="col">ID comentario</th>
+                        <th class="Nombre" scope="col">Contenido</th>
+                        <th class="Email" scope="col">Fecha comentario</th>
+                        <th classscope="col">Nombre del producto</th>
+                        <th classscope="col">Estado</th>
+                    </tr>
+                    <tr *ngFor="let comentario of comentarios">
+                        <th class="" scope="col">{{comentario[0]}}</th>
+                        <th class="Nombre" scope="col">{{comentario[1]}}</th>
+                        <th class="Email" scope="col">{{comentario[2]}}</th>
+                        <th classscope="col">{{comentario[3]}}</th>
+                        <div *ngIf="comentario[4]==0">
+                            <button type="button" class="btn btn-primary" style="width: 200px;">Habilitar</button>
+                        </div>
+                        <div *ngIf="comentario[4]==1">
+                            <button type="button" class="btn btn-danger" style="width: 200px;">Deshabilitar</button>
+                        </div>
+                    </tr>
+                </table>
             </div>
         </div>
     </div>
