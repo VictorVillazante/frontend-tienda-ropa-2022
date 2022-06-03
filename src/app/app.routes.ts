@@ -1,3 +1,4 @@
+import { DashboardCategoriaComponent } from './components/dashboard-categoria/dashboard-categoria.component';
 import { DashboardGeneralComponent } from './components/dashboard-general/dashboard-general.component';
 import { ProductsUserComponent } from './components/products-user/products-user.component';
 import { CreateAccountUserComponent } from './components/create-account-user/create-account-user.component';
@@ -35,6 +36,10 @@ const APP_ROUTES: Routes = [
         {
           path:'dashboard/general/:year',
           component:DashboardGeneralComponent
+        },
+        {
+          path:'dashboard/:categoria/:year',
+          component:DashboardCategoriaComponent
         },
       ]
     },
