@@ -20,25 +20,28 @@ export class GestionUsuarioComponent implements OnInit{
     email:""
   };
   constructor(private service:ServiceAdm,private router: Router,private activatedRoute:ActivatedRoute,private serviceUsuario:UsuarioService) {
-      console.log("Clase ABMproductosComponent");
-      this.activatedRoute.params.subscribe( params => {
-        if(params['id']===null || params['id']===undefined || typeof params['id'] === 'undefined'){
-          this.id="...";
-          this.usuarioSeleccionado = {
-            id_usuario:"",
-            nombre:"",
-            apellido:"",
-            email:""
-          };
-        }else{
-          this.id = params['id'];
-          this.buscarUsuarioPorID();
-          this.obtenerComentariosDeUsuario(this.id);
-        }
-        console.log("parametro");
-        console.log(params['id']);
-        console.log(this.id);
-      });
+    this.cargarDatosUsuario();
+  }
+  cargarDatosUsuario(){
+    console.log("Clase ABMproductosComponent");
+    this.activatedRoute.params.subscribe( params => {
+      if(params['id']===null || params['id']===undefined || typeof params['id'] === 'undefined'){
+        this.id="...";
+        this.usuarioSeleccionado = {
+          id_usuario:"",
+          nombre:"",
+          apellido:"",
+          email:""
+        };
+      }else{
+        this.id = params['id'];
+        this.buscarUsuarioPorID();
+        this.obtenerComentariosDeUsuario(this.id);
+      }
+      console.log("parametro");
+      console.log(params['id']);
+      console.log(this.id);
+    });
   }
   obtenerComentariosDeUsuario(id: any) {
     console.log("Buscar comentarios de usuario:"+id);
@@ -46,9 +49,8 @@ export class GestionUsuarioComponent implements OnInit{
       console.log("obtener comentarios del usuario devolviendo data");
       console.log(data);
       this.comentarios=data;
-      if(data===null || data===undefined || typeof data === 'undefined'){
-        window.alert("No se encontraron comentarios del usuario seleccionado");
-      }else{
+      if(this.comentarios.length==0){
+        alert("No se encontraron comentarios");
       }
     })
   }
@@ -72,5 +74,32 @@ export class GestionUsuarioComponent implements OnInit{
       }
     })
   }
-  
+  actualizarEstadoComentario(comentario:any,estado:number){
+    this.serviceUsuario.putComentarioUsuario(comentario,estado).subscribe(data=>{
+      console.log("Comentario Actualizado");
+      console.log(data);
+      if(data===null || data===undefined || typeof data === 'undefined'){
+        window.alert("No se encontraron comentarios del usuario seleccionado");
+      }else{
+        
+      }
+    })
+  }
+  habilitarComentario(id:any){
+    this.serviceUsuario.habilitarComentario(id).subscribe(data=>{
+      console.log("Comentario Actualizado");
+      console.log(data);
+      window.alert("Comentario habilitado");
+      this.cargarDatosUsuario();
+    })
+  }
+  deshabilitarComentario(id:any){
+    this.serviceUsuario.deshabilitarComentario(id).subscribe(data=>{
+      console.log("Comentario Actualizado");
+      console.log(data);
+      window.alert("Comentario deshabilitado");
+      this.cargarDatosUsuario();
+
+    })
+  }
 }

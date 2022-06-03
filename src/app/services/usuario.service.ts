@@ -27,6 +27,28 @@ export class UsuarioService {
   getComentariosUsuario(id:number){
     console.log("obtener comentarios del usuario");
     return this.http.get<Object[]>("http://localhost:8080/usuarios/comentarios/usuario/"+id);
+  }
+  putComentarioUsuario(comentario:any,estado:number){
+    console.log("Actualizar comentario service");
+    console.log(comentario);
+    return this.http.put("http://localhost:8080/usuarios/comentario",{
+      "idComentarios":comentario[0],
+      "contenido":comentario[1],
+      "fecha":comentario[2],
+      "usuario_id_usuario":comentario[3],
+      "producto_id_producto":comentario[4],
+      "estado_comentario":0
+    },{responseType:'text'});
 
+  }
+  habilitarComentario(id:any){
+    console.log("Habilitar comentario");
+    console.log(id);
+    return this.http.put("http://localhost:8080/usuarios/comentario/habilitar/"+id,{},{responseType:'text'});
+  }
+  deshabilitarComentario(id:any){
+    console.log("Habilitar comentario");
+    console.log(id);
+    return this.http.put("http://localhost:8080/usuarios/comentario/deshabilitar/"+id,{},{responseType:'text'});
   }
 }
