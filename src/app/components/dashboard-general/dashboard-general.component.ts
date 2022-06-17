@@ -31,8 +31,8 @@ export class DashboardGeneralComponent implements OnInit {
   public lista:number[]=[];
   
 
-  public high=Math.round(this.getRandomArbitrary(7,8));
-  public width=Math.round(this.getRandomArbitrary(7,8))
+  public high=Math.round(this.getRandomArbitrary(200,150));
+  public width=Math.round(this.getRandomArbitrary(200,150))
   public image:string | undefined;
   public seleccionado:number=0
 
