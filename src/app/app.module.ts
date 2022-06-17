@@ -46,6 +46,8 @@ import { UsuarioListadoComprasComponent } from './components/usuario-listado-com
 import { UsuarioService } from './services/usuario.service';
 import { DashboardGeneralComponent } from './components/dashboard-general/dashboard-general.component';
 import { DashboardCategoriaComponent } from './components/dashboard-categoria/dashboard-categoria.component';
+import { CompraUserComponent } from './components/compra-user/compra-user.component';
+import { NgChartsModule } from 'ng2-charts';
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,7 +77,8 @@ import { DashboardCategoriaComponent } from './components/dashboard-categoria/da
     PerfilUsuarioDatosComponent,
     UsuarioListadoComprasComponent,
     DashboardGeneralComponent,
-    DashboardCategoriaComponent
+    DashboardCategoriaComponent,
+    CompraUserComponent
   ],
   imports: [
     BrowserModule,
@@ -90,7 +93,8 @@ import { DashboardCategoriaComponent } from './components/dashboard-categoria/da
     MatDatepickerModule,
     MatNativeDateModule ,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    NgChartsModule
   ],
   providers: [ServiceAdm,ServiceProductoService,HelperService,UsuarioService],
   bootstrap: [AppComponent]

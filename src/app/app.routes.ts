@@ -18,6 +18,7 @@ import { VentasProductosComponent } from './components/ventas-productos/ventas-p
 import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuario.component';
 import { PerfilUsuarioDatosComponent } from './components/perfil-usuario-datos/perfil-usuario-datos.component';
 import { UsuarioListadoComprasComponent } from './components/usuario-listado-compras/usuario-listado-compras.component';
+import { CompraUserComponent } from './components/compra-user/compra-user.component';
 const APP_ROUTES: Routes = [
     { path: 'descripcionproductos', component: DescripcionProductosComponent },
     { path: 'menuprincipal', 
@@ -63,6 +64,10 @@ const APP_ROUTES: Routes = [
       {
         path:'carrito',
         component:ListCarritoUserComponent
+      },
+      {
+        path:'carrito/compra',
+        component:CompraUserComponent
       },
       {
         path:'account/register',

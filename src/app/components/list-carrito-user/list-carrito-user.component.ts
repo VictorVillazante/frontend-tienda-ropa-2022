@@ -28,7 +28,7 @@ export class ListCarritoUserComponent implements OnInit {
     this.Carrito.getObs('carrito').subscribe(carrito=>{
       this.listaProductos = carrito
       this.total=this.costoTotal(this.listaProductos);
-      this.cargarControll()
+      
     })
     this.productoForm = new FormGroup({
       

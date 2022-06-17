@@ -1,0 +1,189 @@
+<app-navigation-menu-user></app-navigation-menu-user>
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h1>----METODO DE PAGO----</h1>
+            <form [formGroup]="form" >
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Selecciona un metodo de pago</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                      <option>Visa</option>
+                      <option>Mastercard</option>
+                      <option>American Expless</option>
+                      <option>JCB</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Nro Tarjeta</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="NroTarjeta">
+                </div>
+                <br>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Fecha de caducidad</label>
+                                <div class="form-group">
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                      <option>01</option>
+                                      <option>02</option>
+                                      <option>03</option>
+                                      <option>04 </option>
+                                      <option>05</option>
+                                      <option>06</option>
+                                      <option>07</option>
+                                      <option>08</option>
+                                      <option>09</option>
+                                      <option>10</option>
+                                      <option>11</option>
+                                      <option>12</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Fecha de caducidad</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                  <option>2022</option>
+                                  <option>2023</option>
+                                  <option>2024</option>
+                                  <option>2025</option>
+                                  <option>2026</option>
+                                  <option>2027</option>
+                                  <option>2028</option>
+                                  <option>2029</option>
+                                  <option>2030</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Codifo de seguridad</label>
+                                <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="CodigoSeguridad">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h1>----INFORMACION DE FACTURACION----</h1>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Nombre</label>
+                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Apellido</label>
+                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Direccion de facturacion</label>
+                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Codigo postal</label>
+                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Localidad</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Pais</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                      <option>Bolivia</option>
+                      <option>Peru</option>
+                      <option>Chile</option>
+                      <option>Argentina</option>
+                      <option>Uruguay</option>
+                      <option>Brasil</option>
+                      <option>Colombia</option>
+                    </select>
+                  </div>
+                  <br>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Telefono</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                </div>
+                <br>
+                <button type="button" class="btn btn-primary" [disabled]="form.invalid" (click)="CrearCompra()">Confirmar Compra</button>
+            </form>
+            <br>
+            
+                
+
+        </div>
+
+        <div class="col-6"> 
+            <div class="card mb-3" style="" *ngFor="let producto of listaProductos">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img [src]="image" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-10">
+                                        <h5 class="card-title">{{producto.nombre}}</h5>
+                                    </div>
+                                    <div class="col-2">
+                                        <h5 class="card-title">{{producto.precio}} Bs.</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-3">
+                                        <button type="button" class="btn btn-danger" (click)="deleteData(producto)">Eliminar</button>
+                                    </div>
+            
+                                    <div class="col-3" >                                       
+                                            <input type="number" class="form-control" [(ngModel)]="producto.cantidad">
+                                            <button type="button" class="btn btn-light" (click)="modoificarCantidad(producto.id)">Confirmar</button>                                                                                 
+                                    </div>
+                                    <div class="col-3" >                                       
+                                        <p>Color: {{producto.color}}</p> 
+                                        <p>Talla: {{producto.talla}}</p>                                                                                
+                                    </div>
+                                    
+                                </div>
+                            </div>        
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3" style="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-9">
+                            <h3 class="card-title">Costo Total</h3>
+                        </div>  
+                        <div class="col-3">
+                            <p class="card-text">{{total}}</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
