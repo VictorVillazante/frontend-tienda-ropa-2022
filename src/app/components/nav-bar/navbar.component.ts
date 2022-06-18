@@ -6,6 +6,8 @@ import { ServiceProductoService } from '../../services/service-producto.service'
 import { Producto } from 'src/app/models/Producto';
 import { HelperService } from '../../services/helper.service';
 import { ProductosSinStock } from 'src/app/models/ProductosSinStock';
+import { AuthService } from '@auth0/auth0-angular';
+
 @Component({
   selector: 'navbar',
   templateUrl: './navbar.component.html',

@@ -1,8 +1,11 @@
 import { RestService } from './../../services/rest.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CarritoService } from './../../services/carrito.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '@auth0/auth0-angular';
+import { DOCUMENT } from '@angular/common';
+
 
 @Component({
   selector: 'app-navigation-menu-user',
@@ -17,7 +20,9 @@ export class NavigationMenuUserComponent implements OnInit {
 
   public resBusqueda:any= []
 
-  constructor(private router: Router,private Carrito:CarritoService, private formBuilde: FormBuilder, private RestService:RestService) { }
+  constructor(private router: Router,public auth:AuthService,@Inject(DOCUMENT)private doc:Document,private Carrito:CarritoService, private formBuilde: FormBuilder, private RestService:RestService) { 
+    console.log(auth);
+  }
 
   ngOnInit(): void {
     this.nCarrito=this.Carrito.getCache('carrito').length
@@ -41,5 +46,11 @@ export class NavigationMenuUserComponent implements OnInit {
   redirigirPerfilUsuario(){
     this.router.navigate(['/perfil']);
   }
-
+  login(){
+    this.auth.loginWithRedirect();
+  }
+  logout(){
+    this.auth.logout({returnTo:this.doc.location.origin});
+  }
 }
+

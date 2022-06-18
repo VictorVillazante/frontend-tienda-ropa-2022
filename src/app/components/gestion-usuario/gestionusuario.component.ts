@@ -5,6 +5,7 @@ import { identifierModuleUrl } from '@angular/compiler';
 import { ActivatedRoute } from '@angular/router';
 import { ServiceAdm } from 'src/app/services/service-adm.service';
 import { UsuarioService } from '../../services/usuario.service';
+import { AuthService } from '@auth0/auth0-angular';
 @Component({
   selector: 'app-gestion-usuario',
   templateUrl: './gestionusuario.component.html',
@@ -13,14 +14,20 @@ import { UsuarioService } from '../../services/usuario.service';
 export class GestionUsuarioComponent implements OnInit{
   comentarios:any;
   id!: any;
+  profileJSON!:string;
   usuarioSeleccionado:any = {
     id_usuario:"",
     nombre:"",
     apellido:"",
     email:""
   };
-  constructor(private service:ServiceAdm,private router: Router,private activatedRoute:ActivatedRoute,private serviceUsuario:UsuarioService) {
+  constructor(public auth:AuthService,private service:ServiceAdm,private router: Router,private activatedRoute:ActivatedRoute,private serviceUsuario:UsuarioService) {
     this.cargarDatosUsuario();
+  }
+  ngOnInit(): void {
+    this.auth.user$.subscribe(
+      (profile)=>(this.profileJSON=JSON.stringify(profile,null,2))
+    )
   }
   cargarDatosUsuario(){
     console.log("Clase ABMproductosComponent");
@@ -54,8 +61,7 @@ export class GestionUsuarioComponent implements OnInit{
       }
     })
   }
-  ngOnInit(): void {
-  }
+
   buscarUsuarioPorID(){
     console.log("El usuario ha buscar es:"+this.id);
     this.serviceUsuario.getUsuarios(this.id).subscribe(data=>{

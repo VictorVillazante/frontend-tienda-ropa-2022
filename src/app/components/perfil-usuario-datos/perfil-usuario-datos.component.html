@@ -1,8 +1,8 @@
 <app-navigation-menu-user></app-navigation-menu-user>
-<div id="contenido-principal">
+<div *ngIf="auth.user$|async as user" id="contenido-principal">
     <div id="img-perfil-usuario">
         <div id="contenedor-img-perfil">
-            <img src="../../../assets/img/mujer_perfil.jpg" />
+            <img [src]="user.picture" class="rounded-circle img-fluid" alt="...">
         </div>
     </div>
     <div id="datos-usuario">
@@ -29,7 +29,7 @@
                 </td>
                 <td>
                     <div class="input-group mb-3">
-                        <input [(ngModel)]="usuarioSeleccionado.nombre" aria-label="Username" aria-describedby="basic-addon1" placeholder="ID:" class="form-control input-formato-pequenio" type="text" name="id-producto" id="id-producto">
+                        {{user.given_name}}
                     </div>
                 </td>
                 <td>
@@ -40,7 +40,7 @@
                 </td>
                 <td>
                     <div class="input-group mb-3">
-                        <input [(ngModel)]="usuarioSeleccionado.apellido" aria-label="Username" aria-describedby="basic-addon1" placeholder="ID:" class="form-control input-formato-pequenio" type="text" name="id-producto" id="id-producto">
+                        {{user.family_name}}
                     </div>
                 </td>
             </tr>
@@ -53,7 +53,7 @@
                 </td>
                 <td>
                     <div class="input-group mb-3">
-                        <input [(ngModel)]="usuarioSeleccionado.email" aria-label="Username" aria-describedby="basic-addon1" placeholder="ID:" class="form-control input-formato-pequenio" type="text" name="id-producto" id="id-producto">
+                        {{user.email}}
                     </div>
                 </td>
                 <td>

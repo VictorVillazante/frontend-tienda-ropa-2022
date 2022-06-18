@@ -48,6 +48,10 @@ import { DashboardGeneralComponent } from './components/dashboard-general/dashbo
 import { DashboardCategoriaComponent } from './components/dashboard-categoria/dashboard-categoria.component';
 import { CompraUserComponent } from './components/compra-user/compra-user.component';
 import { NgChartsModule } from 'ng2-charts';
+
+import { AuthModule } from '@auth0/auth0-angular';
+import { environment as env } from 'src/environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -94,7 +98,11 @@ import { NgChartsModule } from 'ng2-charts';
     MatNativeDateModule ,
     MatFormFieldModule,
     MatInputModule,
-    NgChartsModule
+    NgChartsModule,
+    AuthModule.forRoot({
+      "domain": "dev-nho7-aet.us.auth0.com",
+      "clientId": "Sy7rYlqNq32bI7YWMg8MUaEiZkrDS29X"
+    }),
   ],
   providers: [ServiceAdm,ServiceProductoService,HelperService,UsuarioService],
   bootstrap: [AppComponent]

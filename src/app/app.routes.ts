@@ -19,6 +19,7 @@ import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuar
 import { PerfilUsuarioDatosComponent } from './components/perfil-usuario-datos/perfil-usuario-datos.component';
 import { UsuarioListadoComprasComponent } from './components/usuario-listado-compras/usuario-listado-compras.component';
 import { CompraUserComponent } from './components/compra-user/compra-user.component';
+import { AuthGuard } from '@auth0/auth0-angular';
 const APP_ROUTES: Routes = [
     { path: 'descripcionproductos', component: DescripcionProductosComponent },
     { path: 'menuprincipal', 
@@ -47,7 +48,8 @@ const APP_ROUTES: Routes = [
     
     {
         path:'',
-        component:PrincipalUserComponent
+        component:PrincipalUserComponent,
+        pathMatch:'full'
       },
       {
         path:'products/details/:nombre',
@@ -75,15 +77,18 @@ const APP_ROUTES: Routes = [
       },
       {
         path:'perfil',
-        component:PerfilUsuarioComponent
+        component:PerfilUsuarioComponent,
+        canActivate:[AuthGuard]
       },
       {
         path:'perfil/datos',
-        component:PerfilUsuarioDatosComponent
+        component:PerfilUsuarioDatosComponent,
+        canActivate:[AuthGuard]
       },
       {
         path:'perfil/compras',
-        component:UsuarioListadoComprasComponent
+        component:UsuarioListadoComprasComponent,
+        canActivate:[AuthGuard]
       },
 
 ];

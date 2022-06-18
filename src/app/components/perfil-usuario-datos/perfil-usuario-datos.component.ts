@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '@auth0/auth0-angular';
 import { User } from 'src/app/models/User';
 import { ServiceAdm } from 'src/app/services/service-adm.service';
 import { Usuario } from '../../models/Usuario';
@@ -14,11 +15,15 @@ export class PerfilUsuarioDatosComponent implements OnInit {
   id!: any;
   password!:any;
 
-  constructor(private service:UsuarioService) {
+  constructor(public auth:AuthService,private service:UsuarioService) {
     
   }
-
+  profileJSON:string="";
   ngOnInit(): void {
+    this.auth.user$.subscribe(
+      (profile)=>(this.profileJSON=JSON.stringify(profile,null,2))
+    )
+    console.log(this.auth);
     this.buscarUsuarioPorID(2);
   }
   buscarUsuarioPorID(id:any){
